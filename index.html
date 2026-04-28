@@ -57,6 +57,70 @@
             </div>
         </div>
     </section>
+    <section id="setup" class="py-20 bg-[#050B14]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">特務部署指南</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">只需三個步驟，將 PaiRobot 核心大腦植入您的日常通訊軟體。請選擇您想部署的平台：</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                
+                <div class="bg-gray-900/80 rounded-2xl p-8 border border-green-500/30 hover:border-green-500 transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-500 text-2xl mr-4">💬</div>
+                        <h3 class="text-2xl font-bold">LINE 機器人</h3>
+                    </div>
+                    <ol class="space-y-4 text-gray-300 text-sm list-decimal list-inside">
+                        <li class="pb-2 border-b border-gray-800">前往 <a href="https://developers.line.biz/" target="_blank" class="text-blue-400 hover:underline">LINE Developers</a> 註冊開發者帳號。</li>
+                        <li class="pb-2 border-b border-gray-800">建立一個 <strong>Messaging API</strong> 頻道。</li>
+                        <li class="pb-2 border-b border-gray-800">在設定頁取得 <strong>Channel Access Token (長期)</strong>。</li>
+                        <li class="pb-2 border-b border-gray-800">將您的 <strong>Webhook URL</strong> 填入並開啟 Use Webhook 功能。</li>
+                        <li class="pt-2 text-green-400 font-bold">👉 將 Token 填入 PaiRobot App 設定頁面。</li>
+                    </ol>
+                </div>
+
+                <div class="bg-gray-900/80 rounded-2xl p-8 border border-blue-500/30 hover:border-blue-500 transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-500 text-2xl mr-4">🏢</div>
+                        <h3 class="text-2xl font-bold">企業微信 (WeCom)</h3>
+                    </div>
+                    <ol class="space-y-4 text-gray-300 text-sm list-decimal list-inside">
+                        <li class="pb-2 border-b border-gray-800">登入 <a href="https://work.weixin.qq.com/" target="_blank" class="text-blue-400 hover:underline">企業微信管理後台</a>。</li>
+                        <li class="pb-2 border-b border-gray-800">進入「應用管理」，點擊「建立應用」。</li>
+                        <li class="pb-2 border-b border-gray-800">獲取您的 <strong>CorpID</strong>、<strong>AgentId</strong> 與 <strong>Secret</strong>。</li>
+                        <li class="pb-2 border-b border-gray-800">在接收訊息設定中，配置 <strong>Token</strong> 與 <strong>EncodingAESKey</strong>。</li>
+                        <li class="pt-2 text-blue-400 font-bold">👉 將上述五組金鑰填入 PaiRobot App 中。</li>
+                    </ol>
+                </div>
+
+                <div class="bg-gray-900/80 rounded-2xl p-8 border border-cyan-500/30 hover:border-cyan-500 transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center text-cyan-500 text-2xl mr-4">✈️</div>
+                        <h3 class="text-2xl font-bold">Telegram</h3>
+                    </div>
+                    <ol class="space-y-4 text-gray-300 text-sm list-decimal list-inside">
+                        <li class="pb-2 border-b border-gray-800">在 Telegram 搜尋 <a href="https://t.me/BotFather" target="_blank" class="text-blue-400 hover:underline">@BotFather</a>。</li>
+                        <li class="pb-2 border-b border-gray-800">輸入指令 <code>/newbot</code> 來建立一個新機器人。</li>
+                        <li class="pb-2 border-b border-gray-800">為您的機器人命名，並取得 <strong>HTTP API Token</strong>。</li>
+                        <li class="pb-2 border-b border-gray-800">（選用）輸入 <code>/setcommands</code> 設定特務專屬選單。</li>
+                        <li class="pt-2 text-cyan-400 font-bold">👉 將 Bot Token 填入 PaiRobot App 即可連線。</li>
+                    </ol>
+                </div>
+
+            </div>
+
+            <div class="mt-16 max-w-4xl mx-auto text-center bg-gray-800/30 rounded-xl p-8 border border-gray-700/50">
+                <h4 class="text-xl font-bold mb-4 text-white">📡 雙擎路由架構說明</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    為了確保通訊軟體的訊息能穿透區域網路限制，PaiRobot 採用雲端 Firebase Functions 搭配本機 Agent Brain 的雙重架構。當您在 LINE 說話時，訊息會透過 Webhook 送達雲端，再由手機端的 PaiRobot 即時攔截、思考並回覆。
+                </p>
+                <div class="inline-block px-4 py-2 bg-gray-900 rounded-lg text-xs text-gray-500 font-mono">
+                    [LINE/WeCom] ⟷ [Firebase Webhook] ⟷ [Firestore] ⟷ [您的 iPhone/Mac]
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="container mx-auto px-6 py-8 text-center text-gray-500 text-sm">
         <p>&copy; 2026 PaiRobot Technology. All rights reserved.</p>
     </footer>
