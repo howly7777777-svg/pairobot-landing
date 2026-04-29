@@ -1,128 +1,88 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PaiRobot - 你的全能跨平台 AI 特務管家</title>
+    <title>PaiRobot - Global AI Chief of Staff | 全能跨平台 AI 特務管家</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #050B14; color: #ffffff; }
         .hero-gradient { background: linear-gradient(135deg, #0A192F 0%, #007BFF 50%, #28A745 100%); opacity: 0.15; position: absolute; inset: 0; z-index: -1; }
     </style>
 </head>
-<body class="antialiased relative min-h-screen">
+<body class="antialiased relative min-h-screen flex flex-col">
     <div class="hero-gradient"></div>
+    
     <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
         <div class="text-2xl font-bold tracking-wider">🤖 PaiRobot <span class="text-blue-500">Prime</span></div>
-        <div class="space-x-4 hidden md:flex">
-            <a href="#features" class="hover:text-blue-400 transition">核心特務</a>
-            <a href="#security" class="hover:text-green-400 transition">隱私金庫</a>
-            <a href="#pricing" class="hover:text-blue-400 transition">取得方案</a>
-        </div>
     </nav>
-    <main class="container mx-auto px-6 pt-20 pb-32 text-center">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-            不只是聊天，<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">是真正替你辦事的 AI 幕僚。</span>
+
+    <main class="container mx-auto px-6 pt-20 pb-20 text-center flex-grow">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+            Not just a chat.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">Your true AI Chief of Staff.</span>
         </h1>
-        <p class="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto">
-            完美潛入 LINE 與 企業微信。從早晨的全局戰報、跨平台自動排程，到本機機密文件的深度解析。PaiRobot，為頂級商務人士而生。
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-300">
+            不只是聊天，是真正替你辦事的 AI 幕僚。
+        </h2>
+        
+        <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <strong>[EN]</strong> Seamlessly infiltrate LINE, WeCom, and Telegram. From global morning briefings to local encrypted vault analysis. Built for top-tier executives.<br><br>
+            <strong>[TW]</strong> 完美潛入 LINE、企業微信與 Telegram。從早晨的全域戰報、跨平台自動排程，到本機機密文件的深度解析。為頂級商務人士而生。
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full shadow-lg shadow-blue-500/30 transition transform hover:-translate-y-1">
-                 Download for macOS
-            </a>
-            <a href="#" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-full border border-gray-600 transition transform hover:-translate-y-1">
-                了解 BYOM 萬能引擎架構
-            </a>
-        </div>
     </main>
-    <section id="features" class="bg-gray-900/50 py-20 border-y border-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="p-8 bg-gray-800/50 rounded-2xl border border-gray-700">
-                    <div class="text-4xl mb-4">📱</div>
-                    <h3 class="text-2xl font-bold mb-3">無縫穿透通訊軟體</h3>
-                    <p class="text-gray-400">打破 LINE 與企業微信的長度與時間限制。智慧分段發送，支援語音直接聽寫排程，你的秘書就在你的聯絡人列表裡。</p>
+
+    <section id="setup" class="py-16 bg-gray-900/50 border-t border-gray-800">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Deployment Guide / 特務部署指南</h2>
+                <p class="text-gray-400">Connect your bots with 3 simple steps. / 只需三個步驟，植入您的日常通訊軟體。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800/50 rounded-2xl p-6 border border-green-500/30">
+                    <h3 class="text-xl font-bold mb-4 text-green-400">💬 LINE Bot</h3>
+                    <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
+                        <li>Go to <a href="https://developers.line.biz/" class="text-blue-400 hover:underline">LINE Developers</a>.</li>
+                        <li>Create a <strong>Messaging API</strong> channel.</li>
+                        <li>Get the <strong>Channel Access Token</strong>.</li>
+                        <li>Input your <strong>Webhook URL</strong>.</li>
+                        <li class="text-green-400 font-bold">👉 Paste Token into PaiRobot App.</li>
+                    </ol>
                 </div>
-                <div class="p-8 bg-gray-800/50 rounded-2xl border border-gray-700">
-                    <div class="text-4xl mb-4">🌅</div>
-                    <h3 class="text-2xl font-bold mb-3">全域晨間戰報</h3>
-                    <p class="text-gray-400">大腦直連本機時鐘。每天早上準時彙整您的 Google 日曆、最新未讀 Gmail、產業新聞與健康數據，優雅呈報。</p>
+
+                <div class="bg-gray-800/50 rounded-2xl p-6 border border-blue-500/30">
+                    <h3 class="text-xl font-bold mb-4 text-blue-400">🏢 WeCom (企業微信)</h3>
+                    <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
+                        <li>Log in to <a href="https://work.weixin.qq.com/" class="text-blue-400 hover:underline">WeCom Admin</a>.</li>
+                        <li>Create a new app in "App Management".</li>
+                        <li>Get <strong>CorpID</strong>, <strong>AgentId</strong> & <strong>Secret</strong>.</li>
+                        <li>Set up receiving messages with Token & AESKey.</li>
+                        <li class="text-blue-400 font-bold">👉 Paste all keys into PaiRobot App.</li>
+                    </ol>
                 </div>
-                <div class="p-8 bg-gray-800/50 rounded-2xl border border-gray-700 border-t-4 border-t-green-500">
-                    <div class="text-4xl mb-4">🔐</div>
-                    <h3 class="text-2xl font-bold mb-3">絕對機密 (BYOK)</h3>
-                    <p class="text-gray-400">自帶金鑰 (Bring Your Own Key) 與萬能引擎 (BYOM) 支援。資料加密存於本機金庫，支援 DeepSeek、Kimi 等多種模型，無懼區域封鎖。</p>
+
+                <div class="bg-gray-800/50 rounded-2xl p-6 border border-cyan-500/30">
+                    <h3 class="text-xl font-bold mb-4 text-cyan-400">✈️ Telegram</h3>
+                    <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
+                        <li>Search <a href="https://t.me/BotFather" class="text-blue-400 hover:underline">@BotFather</a> on Telegram.</li>
+                        <li>Send <code>/newbot</code> command.</li>
+                        <li>Name your bot and get the <strong>HTTP API Token</strong>.</li>
+                        <li class="text-cyan-400 font-bold">👉 Paste Token into PaiRobot App.</li>
+                    </ol>
                 </div>
             </div>
         </div>
     </section>
-    <section id="setup" class="py-20 bg-[#050B14]">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">特務部署指南</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">只需三個步驟，將 PaiRobot 核心大腦植入您的日常通訊軟體。請選擇您想部署的平台：</p>
-            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                
-                <div class="bg-gray-900/80 rounded-2xl p-8 border border-green-500/30 hover:border-green-500 transition duration-300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-500 text-2xl mr-4">💬</div>
-                        <h3 class="text-2xl font-bold">LINE 機器人</h3>
-                    </div>
-                    <ol class="space-y-4 text-gray-300 text-sm list-decimal list-inside">
-                        <li class="pb-2 border-b border-gray-800">前往 <a href="https://developers.line.biz/" target="_blank" class="text-blue-400 hover:underline">LINE Developers</a> 註冊開發者帳號。</li>
-                        <li class="pb-2 border-b border-gray-800">建立一個 <strong>Messaging API</strong> 頻道。</li>
-                        <li class="pb-2 border-b border-gray-800">在設定頁取得 <strong>Channel Access Token (長期)</strong>。</li>
-                        <li class="pb-2 border-b border-gray-800">將您的 <strong>Webhook URL</strong> 填入並開啟 Use Webhook 功能。</li>
-                        <li class="pt-2 text-green-400 font-bold">👉 將 Token 填入 PaiRobot App 設定頁面。</li>
-                    </ol>
-                </div>
-
-                <div class="bg-gray-900/80 rounded-2xl p-8 border border-blue-500/30 hover:border-blue-500 transition duration-300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-500 text-2xl mr-4">🏢</div>
-                        <h3 class="text-2xl font-bold">企業微信 (WeCom)</h3>
-                    </div>
-                    <ol class="space-y-4 text-gray-300 text-sm list-decimal list-inside">
-                        <li class="pb-2 border-b border-gray-800">登入 <a href="https://work.weixin.qq.com/" target="_blank" class="text-blue-400 hover:underline">企業微信管理後台</a>。</li>
-                        <li class="pb-2 border-b border-gray-800">進入「應用管理」，點擊「建立應用」。</li>
-                        <li class="pb-2 border-b border-gray-800">獲取您的 <strong>CorpID</strong>、<strong>AgentId</strong> 與 <strong>Secret</strong>。</li>
-                        <li class="pb-2 border-b border-gray-800">在接收訊息設定中，配置 <strong>Token</strong> 與 <strong>EncodingAESKey</strong>。</li>
-                        <li class="pt-2 text-blue-400 font-bold">👉 將上述五組金鑰填入 PaiRobot App 中。</li>
-                    </ol>
-                </div>
-
-                <div class="bg-gray-900/80 rounded-2xl p-8 border border-cyan-500/30 hover:border-cyan-500 transition duration-300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center text-cyan-500 text-2xl mr-4">✈️</div>
-                        <h3 class="text-2xl font-bold">Telegram</h3>
-                    </div>
-                    <ol class="space-y-4 text-gray-300 text-sm list-decimal list-inside">
-                        <li class="pb-2 border-b border-gray-800">在 Telegram 搜尋 <a href="https://t.me/BotFather" target="_blank" class="text-blue-400 hover:underline">@BotFather</a>。</li>
-                        <li class="pb-2 border-b border-gray-800">輸入指令 <code>/newbot</code> 來建立一個新機器人。</li>
-                        <li class="pb-2 border-b border-gray-800">為您的機器人命名，並取得 <strong>HTTP API Token</strong>。</li>
-                        <li class="pb-2 border-b border-gray-800">（選用）輸入 <code>/setcommands</code> 設定特務專屬選單。</li>
-                        <li class="pt-2 text-cyan-400 font-bold">👉 將 Bot Token 填入 PaiRobot App 即可連線。</li>
-                    </ol>
-                </div>
-
-            </div>
-
-            <div class="mt-16 max-w-4xl mx-auto text-center bg-gray-800/30 rounded-xl p-8 border border-gray-700/50">
-                <h4 class="text-xl font-bold mb-4 text-white">📡 雙擎路由架構說明</h4>
-                <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                    為了確保通訊軟體的訊息能穿透區域網路限制，PaiRobot 採用雲端 Firebase Functions 搭配本機 Agent Brain 的雙重架構。當您在 LINE 說話時，訊息會透過 Webhook 送達雲端，再由手機端的 PaiRobot 即時攔截、思考並回覆。
-                </p>
-                <div class="inline-block px-4 py-2 bg-gray-900 rounded-lg text-xs text-gray-500 font-mono">
-                    [LINE/WeCom] ⟷ [Firebase Webhook] ⟷ [Firestore] ⟷ [您的 iPhone/Mac]
-                </div>
+    <footer class="bg-[#050B14] border-t border-gray-800 py-8 mt-auto">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+            <p>&copy; 2026 PaiRobot Technology. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="privacy.html" class="hover:text-blue-400 transition">Privacy Policy (隱私權政策)</a>
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" class="hover:text-blue-400 transition">Terms of Use (EULA)</a>
+                <a href="mailto:howly7777777@gmail.com" class="hover:text-blue-400 transition">Support Contact</a>
             </div>
         </div>
-    </section>
-    <footer class="container mx-auto px-6 py-8 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 PaiRobot Technology. All rights reserved.</p>
     </footer>
 </body>
 </html>
