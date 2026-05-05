@@ -144,25 +144,49 @@
         };
 
         function changeLanguage(lang) {
+            // 1. 【新增記憶體】將使用者的選擇存入瀏覽器
+            localStorage.setItem('pairobot_pref_lang', lang);
+
+            // 2. 切換網頁文字
             for (let id in translations[lang]) {
                 const element = document.getElementById(id);
                 if (element) {
                     element.innerHTML = translations[lang][id];
                 }
             }
+
+            // 3. 【表單任意門】動態修改 Google 表單的語系參數
+            const supportLink = document.getElementById('footer-support');
+            // 這是從您截圖提取的真實表單網址
+            const baseFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSewcr5_RUf2rSGgw1ugsahaXs3gwJnwMKE2oIjLRg3AcNROKQ/viewform";
+            
+            // 根據選擇的語言，掛上 Google 的強制語系參數
+            let googleLangCode = 'en'; 
+            if (lang === 'tw') googleLangCode = 'zh-TW';
+            if (lang === 'jp') googleLangCode = 'ja';
+            
+            supportLink.href = baseFormUrl + "?hl=" + googleLangCode;
         }
         
-        // 自動偵測瀏覽器語言 (防呆設定：預設英文)
-        const userLang = navigator.language || navigator.userLanguage;
-        if (userLang.includes('zh')) {
-            document.getElementById('lang-selector').value = 'tw';
-            changeLanguage('tw');
-        } else if (userLang.includes('ja')) {
-            document.getElementById('lang-selector').value = 'jp';
-            changeLanguage('jp');
-        } else {
-            changeLanguage('en');
-        }
+        // 網頁載入時的啟動邏輯
+        window.onload = () => {
+            // 先去記憶體找有沒有存過
+            const savedLang = localStorage.getItem('pairobot_pref_lang');
+            let targetLang = 'en'; // 預設英文
+            
+            if (savedLang) {
+                targetLang = savedLang; // 如果有記憶，優先使用記憶
+            } else {
+                // 如果沒記憶，才偵測瀏覽器語言
+                const userLang = navigator.language || navigator.userLanguage;
+                if (userLang.includes('zh')) targetLang = 'tw';
+                else if (userLang.includes('ja')) targetLang = 'jp';
+            }
+            
+            // 同步下拉選單的顯示，並執行切換
+            document.getElementById('lang-selector').value = targetLang;
+            changeLanguage(targetLang);
+        };
     </script>
 </body>
 </html>
