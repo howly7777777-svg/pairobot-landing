@@ -8,6 +8,7 @@
     <style>
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #050B14; color: #ffffff; }
         .hero-gradient { background: linear-gradient(135deg, #0A192F 0%, #007BFF 50%, #28A745 100%); opacity: 0.15; position: absolute; inset: 0; z-index: -1; }
+        .glass-panel { background: rgba(31, 41, 55, 0.5); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
     </style>
 </head>
 <body class="antialiased relative min-h-screen flex flex-col">
@@ -15,59 +16,70 @@
     
     <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
         <div class="text-2xl font-bold tracking-wider">🤖 PaiRobot <span class="text-blue-500">Prime</span></div>
+        <select id="lang-selector" onchange="changeLanguage(this.value)" class="bg-gray-800 text-sm rounded-lg border border-gray-600 px-3 py-1 focus:ring-blue-500 focus:border-blue-500">
+            <option value="en">English</option>
+            <option value="tw">繁體中文</option>
+            <option value="jp">日本語</option>
+        </select>
     </nav>
 
-    <main class="container mx-auto px-6 pt-20 pb-20 text-center flex-grow">
+    <main class="container mx-auto px-6 pt-16 pb-12 text-center flex-grow">
         <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-            Not just a chat.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">Your true AI Chief of Staff.</span>
+            <span id="hero-title1">Not just a chat.</span><br>
+            <span id="hero-title2" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">Your true AI Chief of Staff.</span>
         </h1>
-        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-300">
-            不只是聊天，是真正替你辦事的 AI 幕僚。
+        <h2 id="hero-subtitle" class="text-2xl md:text-3xl font-bold mb-8 text-gray-300">
+            Seamlessly infiltrate LINE, WeCom, and Telegram.
         </h2>
-        
-        <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
-            <strong>[EN]</strong> Seamlessly infiltrate LINE, WeCom, and Telegram. From global morning briefings to local encrypted vault analysis. Built for top-tier executives.<br><br>
-            <strong>[TW]</strong> 完美潛入 LINE、企業微信與 Telegram。從早晨的全域戰報、跨平台自動排程，到本機機密文件的深度解析。為頂級商務人士而生。
+        <p id="hero-desc" class="text-lg md:text-xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
+            From global morning briefings to local encrypted vault analysis. Built for top-tier executives.
         </p>
     </main>
+
+    <section class="py-12">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <div class="glass-panel rounded-2xl p-8 border-t-4 border-yellow-500">
+                <h3 id="vault-title" class="text-2xl font-bold mb-3 text-yellow-500">🔒 Enterprise Encrypted Vault</h3>
+                <p id="vault-desc" class="text-gray-300">
+                    Upload your confidential financial reports and contracts. Analyze locally with absolute zero data leakage. Your exclusive AI strategist.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <section id="setup" class="py-16 bg-gray-900/50 border-t border-gray-800">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Deployment Guide / 特務部署指南</h2>
-                <p class="text-gray-400">Connect your bots with 3 simple steps. / 只需三個步驟，植入您的日常通訊軟體。</p>
+                <h2 id="guide-title" class="text-3xl font-bold mb-4">Deployment Guide</h2>
+                <p id="guide-desc" class="text-gray-400">Connect your bots with 3 simple steps.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800/50 rounded-2xl p-6 border border-green-500/30">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="glass-panel rounded-2xl p-6 border-green-500/30">
                     <h3 class="text-xl font-bold mb-4 text-green-400">💬 LINE Bot</h3>
                     <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
-                        <li>Go to <a href="https://developers.line.biz/" class="text-blue-400 hover:underline">LINE Developers</a>.</li>
-                        <li>Create a <strong>Messaging API</strong> channel.</li>
-                        <li>Get the <strong>Channel Access Token</strong>.</li>
-                        <li>Input your <strong>Webhook URL</strong>.</li>
-                        <li class="text-green-400 font-bold">👉 Paste Token into PaiRobot App.</li>
+                        <li id="line-1">Go to LINE Developers.</li>
+                        <li id="line-2">Create a Messaging API channel.</li>
+                        <li id="line-3">Get the Channel Access Token.</li>
+                        <li id="line-4" class="text-green-400 font-bold">👉 Paste Token into PaiRobot App.</li>
                     </ol>
                 </div>
-
-                <div class="bg-gray-800/50 rounded-2xl p-6 border border-blue-500/30">
-                    <h3 class="text-xl font-bold mb-4 text-blue-400">🏢 WeCom (企業微信)</h3>
+                <div class="glass-panel rounded-2xl p-6 border-blue-500/30">
+                    <h3 class="text-xl font-bold mb-4 text-blue-400">🏢 WeCom</h3>
                     <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
-                        <li>Log in to <a href="https://work.weixin.qq.com/" class="text-blue-400 hover:underline">WeCom Admin</a>.</li>
-                        <li>Create a new app in "App Management".</li>
-                        <li>Get <strong>CorpID</strong>, <strong>AgentId</strong> & <strong>Secret</strong>.</li>
-                        <li>Set up receiving messages with Token & AESKey.</li>
-                        <li class="text-blue-400 font-bold">👉 Paste all keys into PaiRobot App.</li>
+                        <li id="wecom-1">Log in to WeCom Admin.</li>
+                        <li id="wecom-2">Create a new app.</li>
+                        <li id="wecom-3">Get CorpID, AgentId & Secret.</li>
+                        <li id="wecom-4" class="text-blue-400 font-bold">👉 Paste all keys into App.</li>
                     </ol>
                 </div>
-
-                <div class="bg-gray-800/50 rounded-2xl p-6 border border-cyan-500/30">
+                <div class="glass-panel rounded-2xl p-6 border-cyan-500/30">
                     <h3 class="text-xl font-bold mb-4 text-cyan-400">✈️ Telegram</h3>
                     <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
-                        <li>Search <a href="https://t.me/BotFather" class="text-blue-400 hover:underline">@BotFather</a> on Telegram.</li>
-                        <li>Send <code>/newbot</code> command.</li>
-                        <li>Name your bot and get the <strong>HTTP API Token</strong>.</li>
-                        <li class="text-cyan-400 font-bold">👉 Paste Token into PaiRobot App.</li>
+                        <li id="tg-1">Search @BotFather.</li>
+                        <li id="tg-2">Send /newbot command.</li>
+                        <li id="tg-3">Get the HTTP API Token.</li>
+                        <li id="tg-4" class="text-cyan-400 font-bold">👉 Paste Token into App.</li>
                     </ol>
                 </div>
             </div>
@@ -78,11 +90,79 @@
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
             <p>&copy; 2026 PaiRobot Technology. All rights reserved.</p>
             <div class="flex gap-6">
-                <a href="privacy.html" class="hover:text-blue-400 transition">Privacy Policy (隱私權政策)</a>
-                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" class="hover:text-blue-400 transition">Terms of Use (EULA)</a>
-                <a href="mailto:howly7777777@gmail.com" class="hover:text-blue-400 transition">Support Contact</a>
+                <a id="footer-privacy" href="privacy.html" class="hover:text-blue-400 transition">Privacy Policy</a>
+                <a id="footer-terms" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" class="hover:text-blue-400 transition">Terms of Use</a>
+                <a id="footer-support" href="您的_Google_表單_連結_貼在這裡" target="_blank" class="hover:text-blue-400 transition font-bold text-blue-500">Support / 專屬客服</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        const translations = {
+            en: {
+                "hero-title1": "Not just a chat.",
+                "hero-title2": "Your true AI Chief of Staff.",
+                "hero-subtitle": "Seamlessly infiltrate LINE, WeCom, and Telegram.",
+                "hero-desc": "From global morning briefings to local encrypted vault analysis. Built for top-tier executives.",
+                "vault-title": "🔒 Enterprise Encrypted Vault",
+                "vault-desc": "Upload your confidential financial reports and contracts. Analyze locally with absolute zero data leakage. Your exclusive AI strategist.",
+                "guide-title": "Deployment Guide",
+                "guide-desc": "Connect your bots with 3 simple steps.",
+                "line-1": "Go to LINE Developers.", "line-2": "Create a Messaging API channel.", "line-3": "Get the Channel Access Token.", "line-4": "👉 Paste Token into PaiRobot App.",
+                "wecom-1": "Log in to WeCom Admin.", "wecom-2": "Create a new app.", "wecom-3": "Get CorpID, AgentId & Secret.", "wecom-4": "👉 Paste all keys into App.",
+                "tg-1": "Search @BotFather.", "tg-2": "Send /newbot command.", "tg-3": "Get the HTTP API Token.", "tg-4": "👉 Paste Token into App.",
+                "footer-privacy": "Privacy Policy", "footer-terms": "Terms of Use", "footer-support": "Support Center"
+            },
+            tw: {
+                "hero-title1": "不只是聊天。",
+                "hero-title2": "您專屬的 AI 幕僚長。",
+                "hero-subtitle": "完美潛入 LINE、企業微信與 Telegram。",
+                "hero-desc": "從早晨的全域戰報，到本機機密文件的深度解析。專為頂級商務人士而生。",
+                "vault-title": "🔒 專屬企業金庫 (Vault)",
+                "vault-desc": "安全上傳機密財報與商業合約。本機端深度解析，資料絕對零外洩，打造您專屬的 AI 戰略顧問。",
+                "guide-title": "特務部署指南",
+                "guide-desc": "只需三個步驟，無縫植入您的日常通訊軟體。",
+                "line-1": "前往 LINE Developers 後台。", "line-2": "建立 Messaging API 頻道。", "line-3": "取得 Channel Access Token。", "line-4": "👉 將 Token 貼入 PaiRobot App。",
+                "wecom-1": "登入企業微信管理後台。", "wecom-2": "在應用管理中創建新應用。", "wecom-3": "取得 CorpID、AgentId 與 Secret。", "wecom-4": "👉 將金鑰貼入 PaiRobot App。",
+                "tg-1": "在 Telegram 搜尋 @BotFather。", "tg-2": "發送 /newbot 指令建立機器人。", "tg-3": "取得 HTTP API Token。", "tg-4": "👉 將 Token 貼入 PaiRobot App。",
+                "footer-privacy": "隱私權政策", "footer-terms": "使用者條款 (EULA)", "footer-support": "聯絡專屬管家"
+            },
+            jp: {
+                "hero-title1": "ただのチャットではない。",
+                "hero-title2": "あなた専属の AI 参謀。",
+                "hero-subtitle": "LINE、WeCom、Telegram にシームレスに統合。",
+                "hero-desc": "朝のグローバルなレポートから、ローカルの暗号化された機密ファイルの解析まで。トップエグゼクティブのために。",
+                "vault-title": "🔒 エンタープライズ暗号化金庫",
+                "vault-desc": "機密の財務報告書や契約書を安全にアップロード。データ漏洩ゼロでローカル解析する、あなただけのAI戦略顧問。",
+                "guide-title": "導入ガイド",
+                "guide-desc": "3つの簡単なステップでボットを連携します。",
+                "line-1": "LINE Developers にアクセスします。", "line-2": "Messaging API チャネルを作成します。", "line-3": "Channel Access Token を取得します。", "line-4": "👉 PaiRobot アプリに Token を貼り付けます。",
+                "wecom-1": "WeCom 管理画面にログインします。", "wecom-2": "新しいアプリを作成します。", "wecom-3": "CorpID、AgentId、Secret を取得します。", "wecom-4": "👉 PaiRobot アプリにキーを貼り付けます。",
+                "tg-1": "Telegram で @BotFather を検索します。", "tg-2": "/newbot コマンドを送信します。", "tg-3": "HTTP API Token を取得します。", "tg-4": "👉 PaiRobot アプリに Token を貼り付けます。",
+                "footer-privacy": "プライバシーポリシー", "footer-terms": "利用規約", "footer-support": "専属サポート"
+            }
+        };
+
+        function changeLanguage(lang) {
+            for (let id in translations[lang]) {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.innerHTML = translations[lang][id];
+                }
+            }
+        }
+        
+        // 自動偵測瀏覽器語言 (防呆設定：預設英文)
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.includes('zh')) {
+            document.getElementById('lang-selector').value = 'tw';
+            changeLanguage('tw');
+        } else if (userLang.includes('ja')) {
+            document.getElementById('lang-selector').value = 'jp';
+            changeLanguage('jp');
+        } else {
+            changeLanguage('en');
+        }
+    </script>
 </body>
 </html>
