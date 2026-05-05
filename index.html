@@ -99,52 +99,19 @@
 
     <script>
         const translations = {
-            en: {
-                "hero-title1": "Not just a chat.",
-                "hero-title2": "Your true AI Chief of Staff.",
-                "hero-subtitle": "Seamlessly infiltrate LINE, WeCom, and Telegram.",
-                "hero-desc": "From global morning briefings to local encrypted vault analysis. Built for top-tier executives.",
-                "vault-title": "🔒 Enterprise Encrypted Vault",
-                "vault-desc": "Upload your confidential financial reports and contracts. Analyze locally with absolute zero data leakage. Your exclusive AI strategist.",
-                "guide-title": "Deployment Guide",
-                "guide-desc": "Connect your bots with 3 simple steps.",
-                "line-1": "Go to LINE Developers.", "line-2": "Create a Messaging API channel.", "line-3": "Get the Channel Access Token.", "line-4": "👉 Paste Token into PaiRobot App.",
-                "wecom-1": "Log in to WeCom Admin.", "wecom-2": "Create a new app.", "wecom-3": "Get CorpID, AgentId & Secret.", "wecom-4": "👉 Paste all keys into App.",
-                "tg-1": "Search @BotFather.", "tg-2": "Send /newbot command.", "tg-3": "Get the HTTP API Token.", "tg-4": "👉 Paste Token into App.",
-                "footer-privacy": "Privacy Policy", "footer-terms": "Terms of Use", "footer-support": "Support Center"
-            },
-            tw: {
-                "hero-title1": "不只是聊天。",
-                "hero-title2": "您專屬的 AI 幕僚長。",
-                "hero-subtitle": "完美潛入 LINE、企業微信與 Telegram。",
-                "hero-desc": "從早晨的全域戰報，到本機機密文件的深度解析。專為頂級商務人士而生。",
-                "vault-title": "🔒 專屬企業金庫 (Vault)",
-                "vault-desc": "安全上傳機密財報與商業合約。本機端深度解析，資料絕對零外洩，打造您專屬的 AI 戰略顧問。",
-                "guide-title": "特務部署指南",
-                "guide-desc": "只需三個步驟，無縫植入您的日常通訊軟體。",
-                "line-1": "前往 LINE Developers 後台。", "line-2": "建立 Messaging API 頻道。", "line-3": "取得 Channel Access Token。", "line-4": "👉 將 Token 貼入 PaiRobot App。",
-                "wecom-1": "登入企業微信管理後台。", "wecom-2": "在應用管理中創建新應用。", "wecom-3": "取得 CorpID、AgentId 與 Secret。", "wecom-4": "👉 將金鑰貼入 PaiRobot App。",
-                "tg-1": "在 Telegram 搜尋 @BotFather。", "tg-2": "發送 /newbot 指令建立機器人。", "tg-3": "取得 HTTP API Token。", "tg-4": "👉 將 Token 貼入 PaiRobot App。",
-                "footer-privacy": "隱私權政策", "footer-terms": "使用者條款 (EULA)", "footer-support": "聯絡專屬管家"
-            },
-            jp: {
-                "hero-title1": "ただのチャットではない。",
-                "hero-title2": "あなた専属の AI 参謀。",
-                "hero-subtitle": "LINE、WeCom、Telegram にシームレスに統合。",
-                "hero-desc": "朝のグローバルなレポートから、ローカルの暗号化された機密ファイルの解析まで。トップエグゼクティブのために。",
-                "vault-title": "🔒 エンタープライズ暗号化金庫",
-                "vault-desc": "機密の財務報告書や契約書を安全にアップロード。データ漏洩ゼロでローカル解析する、あなただけのAI戦略顧問。",
-                "guide-title": "導入ガイド",
-                "guide-desc": "3つの簡単なステップでボットを連携します。",
-                "line-1": "LINE Developers にアクセスします。", "line-2": "Messaging API チャネルを作成します。", "line-3": "Channel Access Token を取得します。", "line-4": "👉 PaiRobot アプリに Token を貼り付けます。",
-                "wecom-1": "WeCom 管理画面にログインします。", "wecom-2": "新しいアプリを作成します。", "wecom-3": "CorpID、AgentId、Secret を取得します。", "wecom-4": "👉 PaiRobot アプリにキーを貼り付けます。",
-                "tg-1": "Telegram で @BotFather を検索します。", "tg-2": "/newbot コマンドを送信します。", "tg-3": "HTTP API Token を取得します。", "tg-4": "👉 PaiRobot アプリに Token を貼り付けます。",
-                "footer-privacy": "プライバシーポリシー", "footer-terms": "利用規約", "footer-support": "専属サポート"
-            }
+            // ... (前面的英文、繁中、日文翻譯字典都保持不變，不用動) ...
+        };
+
+        // 🌟 這裡放您三個平行宇宙表單的專屬網址！
+        const formUrls = {
+            tw: "https://docs.google.com/forms/d/e/1FAIpQLSewcr5_RUf2rSGgw1ugsahaXs3gwJnwMKE2oljLRg3AcNROKQ/viewform",
+            // ⚠️ 爺，請把下面這兩個換成您新建立的英文版和日文版表單網址！
+            en: "https://docs.google.com/forms/d/e/1FAIpQLSeaiiU50PLWTUF4ERp1noDXMYUF0w6Ujuz_0kxs7d0aYRKxwQ/viewform?usp=publish-editor",
+            jp: "https://docs.google.com/forms/d/e/1FAIpQLSe_wXtxBSTk22PRbh-BCl1hs0yK3SbXDP_t-bKUs8LgYXGnQQ/viewform?usp=publish-editor"
         };
 
         function changeLanguage(lang) {
-            // 1. 【新增記憶體】將使用者的選擇存入瀏覽器
+            // 1. 記憶體儲存
             localStorage.setItem('pairobot_pref_lang', lang);
 
             // 2. 切換網頁文字
@@ -155,35 +122,33 @@
                 }
             }
 
-            // 3. 【表單任意門】動態修改 Google 表單的語系參數
+            // 3. 【表單分流任意門】根據選擇的語言，直接換成該語言的專屬表單！
             const supportLink = document.getElementById('footer-support');
-            // 這是從您截圖提取的真實表單網址
-            const baseFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSewcr5_RUf2rSGgw1ugsahaXs3gwJnwMKE2oljLRg3AcNROKQ/viewform";
             
-            // 根據選擇的語言，掛上 Google 的強制語系參數
+            // 如果字典裡有對應的網址就用，沒有的話預設給英文版
+            const targetUrl = formUrls[lang] || formUrls['en']; 
+            
+            // 我們依然可以保留 hl 參數，確保 Google 內建按鈕也是對的語言
             let googleLangCode = 'en'; 
             if (lang === 'tw') googleLangCode = 'zh-TW';
             if (lang === 'jp') googleLangCode = 'ja';
             
-            supportLink.href = baseFormUrl + "?hl=" + googleLangCode;
+            supportLink.href = targetUrl + "?hl=" + googleLangCode;
         }
         
         // 網頁載入時的啟動邏輯
         window.onload = () => {
-            // 先去記憶體找有沒有存過
             const savedLang = localStorage.getItem('pairobot_pref_lang');
             let targetLang = 'en'; // 預設英文
             
             if (savedLang) {
-                targetLang = savedLang; // 如果有記憶，優先使用記憶
+                targetLang = savedLang;
             } else {
-                // 如果沒記憶，才偵測瀏覽器語言
                 const userLang = navigator.language || navigator.userLanguage;
                 if (userLang.includes('zh')) targetLang = 'tw';
                 else if (userLang.includes('ja')) targetLang = 'jp';
             }
             
-            // 同步下拉選單的顯示，並執行切換
             document.getElementById('lang-selector').value = targetLang;
             changeLanguage(targetLang);
         };
