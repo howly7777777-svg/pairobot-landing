@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PaiRobot - Global AI Chief of Staff | 全能跨平台 AI 特務管家</title>
+    <title>PaiRobot - Global AI Chief of Staff</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #050B14; color: #ffffff; }
@@ -13,35 +13,36 @@
 </head>
 <body class="antialiased relative min-h-screen flex flex-col">
     <div class="hero-gradient"></div>
-    
+
     <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
-        <div class="text-2xl font-bold tracking-wider">🤖 PaiRobot <span class="text-blue-500">Prime</span></div>
+        <div class="text-2xl font-bold tracking-wider">PaiRobot <span class="text-blue-500">Prime</span></div>
         <select id="lang-selector" onchange="changeLanguage(this.value)" class="bg-gray-800 text-sm rounded-lg border border-gray-600 px-3 py-1 focus:ring-blue-500 focus:border-blue-500">
             <option value="en">English</option>
             <option value="tw">繁體中文</option>
             <option value="jp">日本語</option>
+            <option value="kr">한국어</option>
         </select>
     </nav>
 
     <main class="container mx-auto px-6 pt-16 pb-12 text-center flex-grow">
         <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
             <span id="hero-title1">Not just a chat.</span><br>
-            <span id="hero-title2" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">Your true AI Chief of Staff.</span>
+            <span id="hero-title2" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">Your AI Chief of Staff.</span>
         </h1>
         <h2 id="hero-subtitle" class="text-2xl md:text-3xl font-bold mb-8 text-gray-300">
-            Seamlessly infiltrate LINE, WeCom, and Telegram.
+            Connect LINE, WeCom, and Telegram with one control center.
         </h2>
         <p id="hero-desc" class="text-lg md:text-xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
-            From global morning briefings to local encrypted vault analysis. Built for top-tier executives.
+            Local-first security, cloud-scale intelligence, and executive-ready automation in one app.
         </p>
     </main>
 
     <section class="py-12">
         <div class="container mx-auto px-6 max-w-4xl text-center">
             <div class="glass-panel rounded-2xl p-8 border-t-4 border-yellow-500">
-                <h3 id="vault-title" class="text-2xl font-bold mb-3 text-yellow-500">🔒 Enterprise Encrypted Vault</h3>
+                <h3 id="vault-title" class="text-2xl font-bold mb-3 text-yellow-500">Encrypted Vault</h3>
                 <p id="vault-desc" class="text-gray-300">
-                    Upload your confidential financial reports and contracts. Analyze locally with absolute zero data leakage. Your exclusive AI strategist.
+                    Keep sensitive identity records and strategic files protected with local encrypted storage.
                 </p>
             </div>
         </div>
@@ -50,36 +51,36 @@
     <section id="setup" class="py-16 bg-gray-900/50 border-t border-gray-800">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-12">
-                <h2 id="guide-title" class="text-3xl font-bold mb-4">Deployment Guide</h2>
-                <p id="guide-desc" class="text-gray-400">Connect your bots with 3 simple steps.</p>
+                <h2 id="guide-title" class="text-3xl font-bold mb-4">Setup Guide</h2>
+                <p id="guide-desc" class="text-gray-400">Connect your messaging agents in 3 steps.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 <div class="glass-panel rounded-2xl p-6 border-green-500/30">
-                    <h3 class="text-xl font-bold mb-4 text-green-400">💬 LINE Bot</h3>
+                    <h3 class="text-xl font-bold mb-4 text-green-400">LINE Bot</h3>
                     <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
-                        <li id="line-1">Go to LINE Developers.</li>
+                        <li id="line-1">Open LINE Developers Console.</li>
                         <li id="line-2">Create a Messaging API channel.</li>
-                        <li id="line-3">Get the Channel Access Token.</li>
-                        <li id="line-4" class="text-green-400 font-bold">👉 Paste Token into PaiRobot App.</li>
+                        <li id="line-3">Copy Channel Access Token.</li>
+                        <li id="line-4" class="text-green-400 font-bold">Paste it into PaiRobot Settings.</li>
                     </ol>
                 </div>
                 <div class="glass-panel rounded-2xl p-6 border-blue-500/30">
-                    <h3 class="text-xl font-bold mb-4 text-blue-400">🏢 WeCom</h3>
+                    <h3 class="text-xl font-bold mb-4 text-blue-400">WeCom</h3>
                     <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
                         <li id="wecom-1">Log in to WeCom Admin.</li>
-                        <li id="wecom-2">Create a new app.</li>
-                        <li id="wecom-3">Get CorpID, AgentId & Secret.</li>
-                        <li id="wecom-4" class="text-blue-400 font-bold">👉 Paste all keys into App.</li>
+                        <li id="wecom-2">Create an application.</li>
+                        <li id="wecom-3">Copy CorpID, AgentId, Secret.</li>
+                        <li id="wecom-4" class="text-blue-400 font-bold">Paste all keys into PaiRobot Settings.</li>
                     </ol>
                 </div>
                 <div class="glass-panel rounded-2xl p-6 border-cyan-500/30">
-                    <h3 class="text-xl font-bold mb-4 text-cyan-400">✈️ Telegram</h3>
+                    <h3 class="text-xl font-bold mb-4 text-cyan-400">Telegram</h3>
                     <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
                         <li id="tg-1">Search @BotFather.</li>
-                        <li id="tg-2">Send /newbot command.</li>
-                        <li id="tg-3">Get the HTTP API Token.</li>
-                        <li id="tg-4" class="text-cyan-400 font-bold">👉 Paste Token into App.</li>
+                        <li id="tg-2">Send /newbot.</li>
+                        <li id="tg-3">Copy HTTP API Token.</li>
+                        <li id="tg-4" class="text-cyan-400 font-bold">Paste it into PaiRobot Settings.</li>
                     </ol>
                 </div>
             </div>
@@ -92,7 +93,7 @@
             <div class="flex gap-6">
                 <a id="footer-privacy" href="privacy.html" class="hover:text-blue-400 transition">Privacy Policy</a>
                 <a id="footer-terms" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" class="hover:text-blue-400 transition">Terms of Use</a>
-                <a id="footer-support" href="https://docs.google.com/forms/d/e/1FAIpQLSewcr5_RUf2rSGgw1ugsahaXs3gwJnwMKE2oljLRg3AcNROKQ/viewform?usp=header" target="_blank" class="hover:text-blue-400 transition font-bold text-blue-500">Support / 專屬客服</a>
+                <a id="footer-support" href="https://docs.google.com/forms/d/e/1FAIpQLSeaiiU50PLWTUF4ERp1noDXMYUF0w6Ujuz_0kxs7d0aYRKxwQ/viewform" target="_blank" class="hover:text-blue-400 transition font-bold text-blue-500">Support Center</a>
             </div>
         </div>
     </footer>
@@ -101,95 +102,145 @@
         const translations = {
             en: {
                 "hero-title1": "Not just a chat.",
-                "hero-title2": "Your true AI Chief of Staff.",
-                "hero-subtitle": "Seamlessly infiltrate LINE, WeCom, and Telegram.",
-                "hero-desc": "From global morning briefings to local encrypted vault analysis. Built for top-tier executives.",
-                "vault-title": "🔒 Enterprise Encrypted Vault",
-                "vault-desc": "Upload your confidential financial reports and contracts. Analyze locally with absolute zero data leakage. Your exclusive AI strategist.",
-                "guide-title": "Deployment Guide",
-                "guide-desc": "Connect your bots with 3 simple steps.",
-                "line-1": "Go to LINE Developers.", "line-2": "Create a Messaging API channel.", "line-3": "Get the Channel Access Token.", "line-4": "👉 Paste Token into PaiRobot App.",
-                "wecom-1": "Log in to WeCom Admin.", "wecom-2": "Create a new app.", "wecom-3": "Get CorpID, AgentId & Secret.", "wecom-4": "👉 Paste all keys into App.",
-                "tg-1": "Search @BotFather.", "tg-2": "Send /newbot command.", "tg-3": "Get the HTTP API Token.", "tg-4": "👉 Paste Token into App.",
-                "footer-privacy": "Privacy Policy", "footer-terms": "Terms of Use", "footer-support": "Support Center"
+                "hero-title2": "Your AI Chief of Staff.",
+                "hero-subtitle": "Connect LINE, WeCom, and Telegram with one control center.",
+                "hero-desc": "Local-first security, cloud-scale intelligence, and executive-ready automation in one app.",
+                "vault-title": "Encrypted Vault",
+                "vault-desc": "Keep sensitive identity records and strategic files protected with local encrypted storage.",
+                "guide-title": "Setup Guide",
+                "guide-desc": "Connect your messaging agents in 3 steps.",
+                "line-1": "Open LINE Developers Console.",
+                "line-2": "Create a Messaging API channel.",
+                "line-3": "Copy Channel Access Token.",
+                "line-4": "Paste it into PaiRobot Settings.",
+                "wecom-1": "Log in to WeCom Admin.",
+                "wecom-2": "Create an application.",
+                "wecom-3": "Copy CorpID, AgentId, Secret.",
+                "wecom-4": "Paste all keys into PaiRobot Settings.",
+                "tg-1": "Search @BotFather.",
+                "tg-2": "Send /newbot.",
+                "tg-3": "Copy HTTP API Token.",
+                "tg-4": "Paste it into PaiRobot Settings.",
+                "footer-privacy": "Privacy Policy",
+                "footer-terms": "Terms of Use",
+                "footer-support": "Support Center"
             },
             tw: {
                 "hero-title1": "不只是聊天。",
-                "hero-title2": "您專屬的 AI 幕僚長。",
-                "hero-subtitle": "完美潛入 LINE、企業微信與 Telegram。",
-                "hero-desc": "從早晨的全域戰報，到本機機密文件的深度解析。專為頂級商務人士而生。",
-                "vault-title": "🔒 專屬企業金庫 (Vault)",
-                "vault-desc": "安全上傳機密財報與商業合約。本機端深度解析，資料絕對零外洩，打造您專屬的 AI 戰略顧問。",
-                "guide-title": "特務部署指南",
-                "guide-desc": "只需三個步驟，無縫植入您的日常通訊軟體。",
-                "line-1": "前往 LINE Developers 後台。", "line-2": "建立 Messaging API 頻道。", "line-3": "取得 Channel Access Token。", "line-4": "👉 將 Token 貼入 PaiRobot App。",
-                "wecom-1": "登入企業微信管理後台。", "wecom-2": "在應用管理中創建新應用。", "wecom-3": "取得 CorpID、AgentId 與 Secret。", "wecom-4": "👉 將金鑰貼入 PaiRobot App。",
-                "tg-1": "在 Telegram 搜尋 @BotFather。", "tg-2": "發送 /newbot 指令建立機器人。", "tg-3": "取得 HTTP API Token。", "tg-4": "👉 將 Token 貼入 PaiRobot App。",
-                "footer-privacy": "隱私權政策", "footer-terms": "使用者條款 (EULA)", "footer-support": "聯絡專屬管家"
+                "hero-title2": "你的 AI 幕僚長。",
+                "hero-subtitle": "一個控制中心，串接 LINE、企業微信、Telegram。",
+                "hero-desc": "本機優先安全、雲端等級智慧、可直接落地的高階自動化。",
+                "vault-title": "加密機密金庫",
+                "vault-desc": "將身分資料與關鍵檔案安全保存在本機加密儲存中。",
+                "guide-title": "快速部署指南",
+                "guide-desc": "三步驟完成通訊特務綁定。",
+                "line-1": "前往 LINE Developers 後台。",
+                "line-2": "建立 Messaging API 頻道。",
+                "line-3": "複製 Channel Access Token。",
+                "line-4": "貼到 PaiRobot 設定頁。",
+                "wecom-1": "登入企業微信管理後台。",
+                "wecom-2": "建立新的應用。",
+                "wecom-3": "複製 CorpID、AgentId、Secret。",
+                "wecom-4": "貼到 PaiRobot 設定頁。",
+                "tg-1": "搜尋 @BotFather。",
+                "tg-2": "發送 /newbot。",
+                "tg-3": "複製 HTTP API Token。",
+                "tg-4": "貼到 PaiRobot 設定頁。",
+                "footer-privacy": "隱私權政策",
+                "footer-terms": "使用條款",
+                "footer-support": "專屬客服"
             },
             jp: {
                 "hero-title1": "ただのチャットではない。",
-                "hero-title2": "あなた専属の AI 参謀。",
-                "hero-subtitle": "LINE、WeCom、Telegram にシームレスに統合。",
-                "hero-desc": "朝のグローバルなレポートから、ローカルの暗号化された機密ファイルの解析まで。トップエグゼクティブのために。",
-                "vault-title": "🔒 エンタープライズ暗号化金庫",
-                "vault-desc": "機密の財務報告書や契約書を安全にアップロード。データ漏洩ゼロでローカル解析する、あなただけのAI戦略顧問。",
-                "guide-title": "導入ガイド",
-                "guide-desc": "3つの簡単なステップでボットを連携します。",
-                "line-1": "LINE Developers にアクセスします。", "line-2": "Messaging API チャネルを作成します。", "line-3": "Channel Access Token を取得します。", "line-4": "👉 PaiRobot アプリに Token を貼り付けます。",
-                "wecom-1": "WeCom 管理画面にログインします。", "wecom-2": "新しいアプリを作成します。", "wecom-3": "CorpID、AgentId、Secret を取得します。", "wecom-4": "👉 PaiRobot アプリにキーを貼り付けます。",
-                "tg-1": "Telegram で @BotFather を検索します。", "tg-2": "/newbot コマンドを送信します。", "tg-3": "HTTP API Token を取得します。", "tg-4": "👉 PaiRobot アプリに Token を貼り付けます。",
-                "footer-privacy": "プライバシーポリシー", "footer-terms": "利用規約", "footer-support": "専属サポート"
+                "hero-title2": "あなたの AI 参謀。",
+                "hero-subtitle": "1つのコントロールセンターで LINE・WeCom・Telegram を接続。",
+                "hero-desc": "ローカル優先のセキュリティとクラウド級の知能を、実務自動化まで一体化。",
+                "vault-title": "暗号化シークレット金庫",
+                "vault-desc": "重要な個人情報と戦略ファイルをローカル暗号化ストレージで保護。",
+                "guide-title": "セットアップガイド",
+                "guide-desc": "3ステップでメッセージング連携を完了。",
+                "line-1": "LINE Developers を開く。",
+                "line-2": "Messaging API チャネルを作成。",
+                "line-3": "Channel Access Token をコピー。",
+                "line-4": "PaiRobot 設定画面に貼り付け。",
+                "wecom-1": "WeCom 管理画面にログイン。",
+                "wecom-2": "新規アプリを作成。",
+                "wecom-3": "CorpID・AgentId・Secret をコピー。",
+                "wecom-4": "PaiRobot 設定画面に貼り付け。",
+                "tg-1": "@BotFather を検索。",
+                "tg-2": "/newbot を送信。",
+                "tg-3": "HTTP API Token をコピー。",
+                "tg-4": "PaiRobot 設定画面に貼り付け。",
+                "footer-privacy": "プライバシーポリシー",
+                "footer-terms": "利用規約",
+                "footer-support": "サポート"
+            },
+            kr: {
+                "hero-title1": "단순한 채팅이 아닙니다.",
+                "hero-title2": "당신의 AI 비서실장.",
+                "hero-subtitle": "하나의 컨트롤 센터로 LINE, WeCom, Telegram을 연결하세요.",
+                "hero-desc": "로컬 우선 보안, 클라우드급 지능, 임원급 자동화를 하나의 앱에 담았습니다.",
+                "vault-title": "암호화 기밀 금고",
+                "vault-desc": "중요 신원정보와 전략 문서를 로컬 암호화 저장소로 안전하게 보호합니다.",
+                "guide-title": "연동 가이드",
+                "guide-desc": "3단계로 메시징 에이전트를 연결하세요.",
+                "line-1": "LINE Developers 콘솔 접속.",
+                "line-2": "Messaging API 채널 생성.",
+                "line-3": "Channel Access Token 복사.",
+                "line-4": "PaiRobot 설정에 붙여넣기.",
+                "wecom-1": "WeCom 관리자 콘솔 로그인.",
+                "wecom-2": "새 애플리케이션 생성.",
+                "wecom-3": "CorpID, AgentId, Secret 복사.",
+                "wecom-4": "PaiRobot 설정에 모두 붙여넣기.",
+                "tg-1": "@BotFather 검색.",
+                "tg-2": "/newbot 명령 전송.",
+                "tg-3": "HTTP API Token 복사.",
+                "tg-4": "PaiRobot 설정에 붙여넣기.",
+                "footer-privacy": "개인정보 처리방침",
+                "footer-terms": "이용약관",
+                "footer-support": "고객지원"
             }
         };
 
-        // 🌟 這裡放您三個平行宇宙表單的專屬網址！
         const formUrls = {
             tw: "https://docs.google.com/forms/d/e/1FAIpQLSewcr5_RUf2rSGgw1ugsahaXs3gwJnwMKE2oljLRg3AcNROKQ/viewform",
-            // ⚠️ 爺，請把下面這兩個換成您新建立的英文版和日文版表單網址！
-            en: "https://docs.google.com/forms/d/e/1FAIpQLSeaiiU50PLWTUF4ERp1noDXMYUF0w6Ujuz_0kxs7d0aYRKxwQ/viewform?usp=publish-editor",
-            jp: "https://docs.google.com/forms/d/e/1FAIpQLSe_wXtxBSTk22PRbh-BCl1hs0yK3SbXDP_t-bKUs8LgYXGnQQ/viewform?usp=publish-editor"
+            en: "https://docs.google.com/forms/d/e/1FAIpQLSeaiiU50PLWTUF4ERp1noDXMYUF0w6Ujuz_0kxs7d0aYRKxwQ/viewform",
+            jp: "https://docs.google.com/forms/d/e/1FAIpQLSe_wXtxBSTk22PRbh-BCl1hs0yK3SbXDP_t-bKUs8LgYXGnQQ/viewform",
+            kr: "https://docs.google.com/forms/d/e/1FAIpQLSeaiiU50PLWTUF4ERp1noDXMYUF0w6Ujuz_0kxs7d0aYRKxwQ/viewform"
         };
 
         function changeLanguage(lang) {
-            // 1. 記憶體儲存
             localStorage.setItem('pairobot_pref_lang', lang);
 
-            // 2. 切換網頁文字
             for (let id in translations[lang]) {
                 const element = document.getElementById(id);
-                if (element) {
-                    element.innerHTML = translations[lang][id];
-                }
+                if (element) element.innerHTML = translations[lang][id];
             }
 
-            // 3. 【表單分流任意門】根據選擇的語言，直接換成該語言的專屬表單！
             const supportLink = document.getElementById('footer-support');
-            
-            // 如果字典裡有對應的網址就用，沒有的話預設給英文版
-            const targetUrl = formUrls[lang] || formUrls['en']; 
-            
-            // 我們依然可以保留 hl 參數，確保 Google 內建按鈕也是對的語言
-            let googleLangCode = 'en'; 
+            const targetUrl = formUrls[lang] || formUrls['en'];
+
+            let googleLangCode = 'en';
             if (lang === 'tw') googleLangCode = 'zh-TW';
             if (lang === 'jp') googleLangCode = 'ja';
-            
+            if (lang === 'kr') googleLangCode = 'ko';
+
             supportLink.href = targetUrl + "?hl=" + googleLangCode;
         }
-        
-        // 網頁載入時的啟動邏輯
+
         window.onload = () => {
             const savedLang = localStorage.getItem('pairobot_pref_lang');
-            let targetLang = 'en'; // 預設英文
-            
-            if (savedLang) {
+            let targetLang = 'en';
+
+            if (savedLang && translations[savedLang]) {
                 targetLang = savedLang;
             } else {
                 const userLang = navigator.language || navigator.userLanguage;
                 if (userLang.includes('zh')) targetLang = 'tw';
                 else if (userLang.includes('ja')) targetLang = 'jp';
+                else if (userLang.includes('ko')) targetLang = 'kr';
             }
-            
+
             document.getElementById('lang-selector').value = targetLang;
             changeLanguage(targetLang);
         };
