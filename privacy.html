@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy - PaiRobot Meeting AI</title>
+  <title>Privacy Policy - PaiRobot</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.65;
-      max-width: 920px;
+      max-width: 900px;
       margin: 40px auto;
       padding: 20px;
       color: #1f2937;
@@ -16,10 +16,23 @@
     }
     h1, h2 { color: #111827; }
     h1 { margin-bottom: 8px; }
-    h2 { margin-top: 26px; margin-bottom: 8px; }
+    h2 { margin-top: 24px; margin-bottom: 8px; }
     p { margin: 10px 0; }
     ul { margin: 8px 0 12px 22px; }
     li { margin: 6px 0; }
+    .lang-section {
+      margin-bottom: 56px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .lang-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .muted { color: #6b7280; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
     .badge {
       display: inline-block;
       font-size: 12px;
@@ -30,232 +43,256 @@
       margin-left: 8px;
       vertical-align: middle;
     }
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-    .muted { color: #6b7280; }
-    .box {
-      border: 1px solid #e5e7eb;
-      border-radius: 10px;
-      padding: 12px 14px;
-      background: #f9fafb;
-    }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <a href="index.html">← Back</a>
-    <select id="lang-selector" onchange="changeLanguage(this.value)">
-      <option value="en">English</option>
-      <option value="tw">繁體中文</option>
-      <option value="cn">简体中文</option>
-      <option value="jp">日本語</option>
-      <option value="kr">한국어</option>
-    </select>
-  </div>
 
-  <h1 id="title">Privacy Policy <span class="badge">Meeting AI</span></h1>
-  <p><strong id="updated">Last Updated: May 2026</strong></p>
+  <!-- ENGLISH -->
+  <section class="lang-section">
+    <h1>Privacy Policy <span class="badge">English</span></h1>
+    <p><strong>Last Updated: May 2026</strong></p>
+    <p>
+      PaiRobot respects your privacy. This Privacy Policy explains what data may be processed,
+      how data is used, when data may be shared with third-party processors, and what controls
+      you have.
+    </p>
 
-  <p id="intro">
-    PaiRobot is built for high-trust workflows. This policy describes what data may be processed, where data can be retained, and how users control retention and export.
-  </p>
+    <h2>1. Bring Your Own Key (BYOK) Architecture</h2>
+    <p>
+      PaiRobot uses a BYOK model. API keys you enter (for example Google Gemini, LINE, Telegram, WeCom,
+      Brave Search) are encrypted and stored locally on your device. We do not upload your API keys
+      to PaiRobot servers.
+    </p>
 
-  <h2 id="s1-title">1. Privacy-First Product Defaults</h2>
-  <div class="box">
-    <ul id="s1-list">
-      <li>Default retention mode is <strong>No Retention</strong>.</li>
-      <li>Meeting results are not auto-saved to vendor-side database by default.</li>
-      <li>Users can explicitly choose local save or customer-managed export.</li>
+    <h2>2. Data We May Process</h2>
+    <ul>
+      <li>User-entered prompts/instructions</li>
+      <li>Optional files you attach</li>
+      <li>Optional connected-service context explicitly requested by you (for example selected email/calendar content)</li>
+      <li>Technical metadata needed for reliability and troubleshooting (timestamps, error diagnostics, request status)</li>
+      <li>Purchase and entitlement status for in-app purchases</li>
     </ul>
-  </div>
 
-  <h2 id="s2-title">2. What Data May Be Processed</h2>
-  <ul id="s2-list">
-    <li>Meeting audio files uploaded by user action.</li>
-    <li>Generated transcript, summary, decisions, action items, and email drafts.</li>
-    <li>Technical diagnostics for reliability (request status, timestamp, error code).</li>
-    <li>Purchase entitlement metadata for in-app subscription/one-time unlocks.</li>
-  </ul>
+    <h2>3. How Data Is Collected</h2>
+    <ul>
+      <li>Directly from your input in the app</li>
+      <li>From connected services only after your explicit action</li>
+      <li>Automatically from app/device events necessary for security and diagnostics</li>
+    </ul>
 
-  <h2 id="s3-title">3. Retention Modes Users Can Choose</h2>
-  <ul id="s3-list">
-    <li><strong>Mode A - No Retention (default):</strong> Session-only output, no automatic persistence to vendor database.</li>
-    <li><strong>Mode B - Local Device Storage:</strong> Export JSON to local app storage on user device.</li>
-    <li><strong>Mode C - Customer-Managed Export:</strong> User selects destination path/storage controlled by customer.</li>
-  </ul>
+    <h2>4. How Data Is Used</h2>
+    <ul>
+      <li>To provide requested AI and automation features</li>
+      <li>To process and restore in-app purchases</li>
+      <li>To maintain security, prevent abuse, and debug failures</li>
+      <li>To improve reliability and service quality</li>
+    </ul>
 
-  <h2 id="s4-title">4. BYOK and Credentials</h2>
-  <p id="s4-desc">
-    PaiRobot uses BYOK architecture. API keys entered by users are encrypted and stored locally on their device. PaiRobot does not upload API keys to a vendor key vault.
+    <h2>5. Third-Party AI/Service Processors</h2>
+    <p>
+      Depending on enabled features and your actions, data may be processed by:
+    </p>
+    <ul>
+      <li>Google Gemini API (generation, summarization, analysis)</li>
+      <li>Brave Search API (web search when enabled by you)</li>
+      <li>Other communication providers you configure (e.g., LINE, Telegram, WeCom) for the specific workflows you trigger</li>
+    </ul>
+    <p>
+      We do not sell personal data.
+    </p>
+
+    <h2>6. In-App Consent Before AI Data Sharing</h2>
+    <p>
+      Before personal data is sent to third-party AI processors, PaiRobot displays an in-app disclosure
+      describing what data may be sent, to whom, and for what purpose, and requests your consent.
+    </p>
+
+    <h2>7. User Control</h2>
+    <p>
+      You can manage or withdraw AI processing consent in app settings. If consent is withdrawn,
+      AI-related transmission to third-party processors is disabled until consent is granted again.
+    </p>
+
+    <h2>8. Data Retention and Storage</h2>
+    <p>
+      PaiRobot is designed to minimize server-side storage. Most sensitive content is processed
+      locally and/or directly between your device and the third-party services you configure.
+      Local app data remains on your device unless you explicitly export or transmit it.
+    </p>
+
+    <h2>9. Third-Party Protection Standard</h2>
+    <p>
+      PaiRobot requires third-party processors to provide data protection measures equal to or stronger
+      than our own standard, consistent with applicable law and platform requirements.
+    </p>
+
+    <h2>10. Contact</h2>
+    <p>
+      If you have privacy questions, contact us at:<br />
+      <strong><a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a></strong>
+    </p>
+  </section>
+
+  <!-- TRADITIONAL CHINESE -->
+  <section class="lang-section">
+    <h1>隱私權政策 <span class="badge">繁體中文</span></h1>
+    <p><strong>最後更新：2026年5月</strong></p>
+    <p>
+      PaiRobot 重視您的隱私。本政策說明我們可能處理哪些資料、如何使用資料、何時可能與第三方服務處理者共享資料，以及您可行使的控制權。
+    </p>
+
+    <h2>1. 自帶金鑰（BYOK）架構</h2>
+    <p>
+      PaiRobot 採用 BYOK 模式。您輸入的 API 金鑰（例如 Google Gemini、LINE、Telegram、WeCom、Brave Search）
+      會加密並僅儲存在您的裝置本機。我們不會把您的 API 金鑰上傳到 PaiRobot 伺服器。
+    </p>
+
+    <h2>2. 我們可能處理的資料</h2>
+    <ul>
+      <li>您在 App 輸入的提示詞／指令</li>
+      <li>您選擇附加的檔案（選用）</li>
+      <li>您明確要求處理的連動服務內容（例如特定郵件／行事曆內容，選用）</li>
+      <li>為穩定性與除錯所需之技術性中繼資料（時間戳、錯誤診斷、請求狀態）</li>
+      <li>應用內購買的交易與權益狀態</li>
+    </ul>
+
+    <h2>3. 資料蒐集方式</h2>
+    <ul>
+      <li>由您在 App 內直接輸入</li>
+      <li>僅在您主動觸發相關功能時，自已連動之服務取得必要資料</li>
+      <li>為安全與診斷目的，自動蒐集最低限度的裝置／應用事件資訊</li>
+    </ul>
+
+    <h2>4. 資料使用目的</h2>
+    <ul>
+      <li>提供您要求的 AI 與自動化功能</li>
+      <li>處理與還原應用內購買權益</li>
+      <li>維護安全、避免濫用與排除故障</li>
+      <li>提升服務可靠度與品質</li>
+    </ul>
+
+    <h2>5. 第三方 AI／服務處理者</h2>
+    <p>依您啟用的功能與操作，資料可能由下列處理者處理：</p>
+    <ul>
+      <li>Google Gemini API（生成、摘要、分析）</li>
+      <li>Brave Search API（僅於您啟用／要求時進行網路搜尋）</li>
+      <li>您自行設定之通訊服務供應商（如 LINE、Telegram、WeCom），僅限您觸發之工作流程</li>
+    </ul>
+    <p>我們不販售您的個人資料。</p>
+
+    <h2>6. AI 資料傳輸前的 App 內同意</h2>
+    <p>
+      在個人資料傳送至第三方 AI 處理者前，PaiRobot 會先於 App 內顯示揭露內容，
+      說明可能傳送的資料、接收方與用途，並向您取得同意。
+    </p>
+
+    <h2>7. 使用者控制</h2>
+    <p>
+      您可於 App 設定中管理或撤回 AI 處理同意。撤回後，與 AI 相關的第三方資料傳輸將停用，直到您再次同意。
+    </p>
+
+    <h2>8. 資料保存與儲存</h2>
+    <p>
+      PaiRobot 以最小化伺服器儲存為原則。多數敏感內容僅在本機與您自行設定的第三方服務間處理。
+      除非您主動匯出或傳送，資料通常保留在您的裝置中。
+    </p>
+
+    <h2>9. 第三方保護標準</h2>
+    <p>
+      PaiRobot 要求第三方處理者提供不低於本服務標準的隱私與安全保護，並符合適用法規與平台要求。
+    </p>
+
+    <h2>10. 聯絡我們</h2>
+    <p>
+      若您有任何隱私問題，請來信：<br />
+      <strong><a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a></strong>
+    </p>
+  </section>
+
+  <!-- JAPANESE -->
+  <section class="lang-section">
+    <h1>プライバシーポリシー <span class="badge">日本語</span></h1>
+    <p><strong>最終更新日：2026年5月</strong></p>
+    <p>
+      PaiRobot はお客様のプライバシーを尊重します。本ポリシーでは、処理される可能性のあるデータ、
+      利用目的、第三者への共有条件、およびユーザーが行使できるコントロールについて説明します。
+    </p>
+
+    <h2>1. BYOK（Bring Your Own Key）アーキテクチャ</h2>
+    <p>
+      PaiRobot は BYOK モデルを採用しています。入力された API キー（Google Gemini、LINE、Telegram、
+      WeCom、Brave Search など）は暗号化され、端末ローカルに保存されます。
+      PaiRobot サーバーへ API キーをアップロードすることはありません。
+    </p>
+
+    <h2>2. 処理される可能性のあるデータ</h2>
+    <ul>
+      <li>ユーザーが入力したプロンプト／指示</li>
+      <li>任意で添付したファイル</li>
+      <li>ユーザーが明示的に要求した連携サービスの文脈情報（例：選択したメール／カレンダー内容）</li>
+      <li>信頼性・障害対応のための技術メタデータ（時刻、エラー診断、リクエスト状態）</li>
+      <li>アプリ内課金の購入・権利状態</li>
+    </ul>
+
+    <h2>3. 収集方法</h2>
+    <ul>
+      <li>アプリ内でのユーザー入力</li>
+      <li>ユーザーの明示的操作に基づく連携サービスからの取得</li>
+      <li>セキュリティと診断に必要な最小限の自動収集</li>
+    </ul>
+
+    <h2>4. 利用目的</h2>
+    <ul>
+      <li>ユーザーが要求した AI／自動化機能の提供</li>
+      <li>アプリ内課金の処理および復元</li>
+      <li>セキュリティ維持、不正防止、障害解析</li>
+      <li>品質と信頼性の向上</li>
+    </ul>
+
+    <h2>5. 第三者 AI／サービス処理者</h2>
+    <p>機能設定およびユーザー操作に応じて、以下により処理される場合があります：</p>
+    <ul>
+      <li>Google Gemini API（生成、要約、分析）</li>
+      <li>Brave Search API（ユーザーが有効化・要求した場合のWeb検索）</li>
+      <li>ユーザー設定の通信サービス（LINE、Telegram、WeCom など。ユーザーが実行した処理に限る）</li>
+    </ul>
+    <p>当社は個人データを販売しません。</p>
+
+    <h2>6. AI データ共有前のアプリ内同意</h2>
+    <p>
+      個人データを第三者 AI 処理者へ送信する前に、PaiRobot はアプリ内で
+      「送信される可能性のあるデータ・送信先・目的」を表示し、ユーザー同意を取得します。
+    </p>
+
+    <h2>7. ユーザーのコントロール</h2>
+    <p>
+      AI 処理同意はアプリ設定で管理・撤回できます。撤回後は、再同意されるまで
+      AI 関連の第三者送信は無効化されます。
+    </p>
+
+    <h2>8. データ保持と保存</h2>
+    <p>
+      PaiRobot はサーバー側保存を最小化する設計です。多くの機密データは、
+      お客様端末および設定済み第三者サービス間で処理されます。
+      ユーザーが明示的にエクスポート／送信しない限り、データは通常端末内に保持されます。
+    </p>
+
+    <h2>9. 第三者保護基準</h2>
+    <p>
+      PaiRobot は、第三者処理者に対し、当社と同等以上のプライバシー・セキュリティ保護を求め、
+      適用法令およびプラットフォーム要件に準拠することを要求します。
+    </p>
+
+    <h2>10. お問い合わせ</h2>
+    <p>
+      プライバシーに関するお問い合わせ：<br />
+      <strong><a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a></strong>
+    </p>
+  </section>
+
+  <p class="muted">
+    If there is any inconsistency between language versions, the English version is used for App Review reference.
   </p>
 
-  <h2 id="s5-title">5. Third-Party Processors</h2>
-  <ul id="s5-list">
-    <li>Google Gemini API (generation/summarization/transcription features, depending on enabled flow).</li>
-    <li>Communication providers configured by users for user-triggered workflows (LINE/Telegram/WeCom).</li>
-  </ul>
-  <p id="s5-note">PaiRobot does not sell personal data.</p>
-
-  <h2 id="s6-title">6. User Consent and Control</h2>
-  <ul id="s6-list">
-    <li>Users can choose retention mode in-app before export.</li>
-    <li>Users can copy, export, or delete local export records and files.</li>
-    <li>Users can revoke AI usage in settings where applicable.</li>
-  </ul>
-
-  <h2 id="s7-title">7. Contact</h2>
-  <p id="s7-desc">
-    For privacy-related requests, contact:
-    <strong><a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a></strong>
-  </p>
-
-  <p id="legal-note" class="muted">
-    If language versions differ, English version is used for App Review reference.
-  </p>
-
-  <script>
-    const t = {
-      en: {
-        "title": "Privacy Policy <span class=\"badge\">Meeting AI</span>",
-        "updated": "Last Updated: May 2026",
-        "intro": "PaiRobot is built for high-trust workflows. This policy describes what data may be processed, where data can be retained, and how users control retention and export.",
-        "s1-title": "1. Privacy-First Product Defaults",
-        "s1-list": "<li>Default retention mode is <strong>No Retention</strong>.</li><li>Meeting results are not auto-saved to vendor-side database by default.</li><li>Users can explicitly choose local save or customer-managed export.</li>",
-        "s2-title": "2. What Data May Be Processed",
-        "s2-list": "<li>Meeting audio files uploaded by user action.</li><li>Generated transcript, summary, decisions, action items, and email drafts.</li><li>Technical diagnostics for reliability (request status, timestamp, error code).</li><li>Purchase entitlement metadata for in-app subscription/one-time unlocks.</li>",
-        "s3-title": "3. Retention Modes Users Can Choose",
-        "s3-list": "<li><strong>Mode A - No Retention (default):</strong> Session-only output, no automatic persistence to vendor database.</li><li><strong>Mode B - Local Device Storage:</strong> Export JSON to local app storage on user device.</li><li><strong>Mode C - Customer-Managed Export:</strong> User selects destination path/storage controlled by customer.</li>",
-        "s4-title": "4. BYOK and Credentials",
-        "s4-desc": "PaiRobot uses BYOK architecture. API keys entered by users are encrypted and stored locally on their device. PaiRobot does not upload API keys to a vendor key vault.",
-        "s5-title": "5. Third-Party Processors",
-        "s5-list": "<li>Google Gemini API (generation/summarization/transcription features, depending on enabled flow).</li><li>Communication providers configured by users for user-triggered workflows (LINE/Telegram/WeCom).</li>",
-        "s5-note": "PaiRobot does not sell personal data.",
-        "s6-title": "6. User Consent and Control",
-        "s6-list": "<li>Users can choose retention mode in-app before export.</li><li>Users can copy, export, or delete local export records and files.</li><li>Users can revoke AI usage in settings where applicable.</li>",
-        "s7-title": "7. Contact",
-        "s7-desc": "For privacy-related requests, contact: <strong><a href=\"mailto:howly7777777@gmail.com\">howly7777777@gmail.com</a></strong>",
-        "legal-note": "If language versions differ, English version is used for App Review reference."
-      },
-      tw: {
-        "title": "隱私政策 <span class=\"badge\">Meeting AI</span>",
-        "updated": "最後更新：2026 年 5 月",
-        "intro": "PaiRobot 以高信任工作流為核心。本政策說明可能處理哪些資料、資料可保留在哪裡，以及使用者如何控制留存與匯出。",
-        "s1-title": "1. 隱私優先的產品預設",
-        "s1-list": "<li>預設留存模式為<strong>不留存</strong>。</li><li>會議結果不會預設自動保存到開發方資料庫。</li><li>使用者可自行選擇本機保存或客戶自管匯出。</li>",
-        "s2-title": "2. 可能處理的資料",
-        "s2-list": "<li>使用者主動上傳的會議音檔。</li><li>產生之逐字稿、摘要、決策、待辦與郵件草稿。</li><li>穩定性所需技術診斷資料（狀態、時間戳、錯誤碼）。</li><li>App 內購買之權益狀態中繼資料。</li>",
-        "s3-title": "3. 使用者可選留存模式",
-        "s3-list": "<li><strong>模式 A - 不留存（預設）：</strong>結果僅保留在當前使用階段，不自動持久化到開發方資料庫。</li><li><strong>模式 B - 本機留存：</strong>使用者可將 JSON 匯出到裝置本機 App 空間。</li><li><strong>模式 C - 客戶自管匯出：</strong>由使用者指定客戶控制之儲存位置。</li>",
-        "s4-title": "4. BYOK 與金鑰處理",
-        "s4-desc": "PaiRobot 採 BYOK 架構。使用者輸入的 API 金鑰會加密存於裝置本機，不上傳至開發方金鑰伺服器。",
-        "s5-title": "5. 第三方處理者",
-        "s5-list": "<li>Google Gemini API（生成/摘要/轉錄等功能，視啟用流程而定）。</li><li>使用者自行設定之通訊服務（LINE/Telegram/WeCom），僅限使用者觸發流程。</li>",
-        "s5-note": "PaiRobot 不販售個人資料。",
-        "s6-title": "6. 使用者同意與控制",
-        "s6-list": "<li>使用者可於匯出前在 App 中選擇留存模式。</li><li>使用者可複製、匯出、刪除本機匯出紀錄與檔案。</li><li>使用者可於設定中停用 AI 相關功能（若適用）。</li>",
-        "s7-title": "7. 聯絡方式",
-        "s7-desc": "如有隱私相關需求，請聯絡：<strong><a href=\"mailto:howly7777777@gmail.com\">howly7777777@gmail.com</a></strong>",
-        "legal-note": "若多語版內容有差異，App Review 參考以英文版為準。"
-      },
-      cn: {
-        "title": "隐私政策 <span class=\"badge\">Meeting AI</span>",
-        "updated": "最后更新：2026 年 5 月",
-        "intro": "PaiRobot 以高信任工作流为核心。本政策说明可能处理哪些数据、数据可保留在哪里，以及用户如何控制留存与导出。",
-        "s1-title": "1. 隐私优先的产品默认设置",
-        "s1-list": "<li>默认留存模式为<strong>不留存</strong>。</li><li>会议结果不会默认自动保存到开发方数据库。</li><li>用户可自行选择本地保存或客户自管导出。</li>",
-        "s2-title": "2. 可能处理的数据",
-        "s2-list": "<li>用户主动上传的会议音频。</li><li>生成的逐字稿、摘要、决策、待办和邮件草稿。</li><li>稳定性所需技术诊断数据（状态、时间戳、错误码）。</li><li>应用内购买权益状态元数据。</li>",
-        "s3-title": "3. 用户可选留存模式",
-        "s3-list": "<li><strong>模式 A - 不留存（默认）：</strong>结果仅保留在当前会话，不自动持久化到开发方数据库。</li><li><strong>模式 B - 本地留存：</strong>用户可将 JSON 导出到设备本地 App 空间。</li><li><strong>模式 C - 客户自管导出：</strong>由用户指定客户控制的存储位置。</li>",
-        "s4-title": "4. BYOK 与密钥处理",
-        "s4-desc": "PaiRobot 采用 BYOK 架构。用户输入的 API 密钥加密存储在设备本地，不上传到开发方密钥服务器。",
-        "s5-title": "5. 第三方处理方",
-        "s5-list": "<li>Google Gemini API（生成/摘要/转录等功能，视启用流程而定）。</li><li>用户自行配置的通信服务（LINE/Telegram/WeCom），仅用于用户触发流程。</li>",
-        "s5-note": "PaiRobot 不出售个人数据。",
-        "s6-title": "6. 用户同意与控制",
-        "s6-list": "<li>用户可在导出前于 App 中选择留存模式。</li><li>用户可复制、导出、删除本地导出记录与文件。</li><li>用户可在设置中关闭 AI 相关功能（如适用）。</li>",
-        "s7-title": "7. 联系方式",
-        "s7-desc": "如有隐私相关问题，请联系：<strong><a href=\"mailto:howly7777777@gmail.com\">howly7777777@gmail.com</a></strong>",
-        "legal-note": "若多语言版本存在差异，App Review 参考以英文版为准。"
-      },
-      jp: {
-        "title": "プライバシーポリシー <span class=\"badge\">Meeting AI</span>",
-        "updated": "最終更新日：2026年5月",
-        "intro": "PaiRobot は高信頼ワークフロー向けに設計されています。本ポリシーは、処理される可能性があるデータ、保持先、保持・エクスポートの制御方法を説明します。",
-        "s1-title": "1. プライバシー優先の既定設定",
-        "s1-list": "<li>既定の保持モードは<strong>保存しない</strong>です。</li><li>会議結果は既定で開発側データベースに自動保存されません。</li><li>ローカル保存または顧客管理エクスポートを利用者が選択できます。</li>",
-        "s2-title": "2. 処理される可能性があるデータ",
-        "s2-list": "<li>ユーザー操作でアップロードされた会議音声。</li><li>生成された文字起こし、要約、意思決定、タスク、メール草案。</li><li>信頼性向上のための技術診断データ（状態、時刻、エラーコード）。</li><li>アプリ内購入の権利状態メタデータ。</li>",
-        "s3-title": "3. 選択可能な保持モード",
-        "s3-list": "<li><strong>モードA - 保存しない（既定）：</strong>結果は現在セッション内のみ保持されます。</li><li><strong>モードB - ローカル保存：</strong>JSON を端末内アプリ領域に保存します。</li><li><strong>モードC - 顧客管理エクスポート：</strong>顧客管理の保存先へ出力します。</li>",
-        "s4-title": "4. BYOK と認証情報",
-        "s4-desc": "PaiRobot は BYOK を採用。入力された API キーは端末ローカルで暗号化保存され、開発側キーストアへアップロードされません。",
-        "s5-title": "5. 第三者処理者",
-        "s5-list": "<li>Google Gemini API（有効化された生成/要約/転写機能）。</li><li>ユーザー設定の通信サービス（LINE/Telegram/WeCom）によるユーザー起点フロー。</li>",
-        "s5-note": "PaiRobot は個人データを販売しません。",
-        "s6-title": "6. 同意とコントロール",
-        "s6-list": "<li>利用者はエクスポート前に保持モードを選択できます。</li><li>ローカル履歴のコピー、エクスポート、削除が可能です。</li><li>必要に応じて AI 利用を設定から無効化できます。</li>",
-        "s7-title": "7. お問い合わせ",
-        "s7-desc": "プライバシーに関するお問い合わせ：<strong><a href=\"mailto:howly7777777@gmail.com\">howly7777777@gmail.com</a></strong>",
-        "legal-note": "各言語版に差異がある場合、App Review 参照は英語版を優先します。"
-      },
-      kr: {
-        "title": "개인정보 처리방침 <span class=\"badge\">Meeting AI</span>",
-        "updated": "최종 업데이트: 2026년 5월",
-        "intro": "PaiRobot은 고신뢰 워크플로우를 위해 설계되었습니다. 본 정책은 처리 가능한 데이터, 보존 위치, 보존/내보내기 제어 방법을 설명합니다.",
-        "s1-title": "1. 프라이버시 우선 기본값",
-        "s1-list": "<li>기본 보존 모드는 <strong>무보존</strong>입니다.</li><li>회의 결과는 기본값으로 개발사 DB에 자동 저장되지 않습니다.</li><li>사용자가 로컬 저장 또는 고객 관리 내보내기를 선택할 수 있습니다.</li>",
-        "s2-title": "2. 처리될 수 있는 데이터",
-        "s2-list": "<li>사용자 동작으로 업로드된 회의 오디오 파일.</li><li>생성된 전사본, 요약, 결정사항, 할 일, 이메일 초안.</li><li>신뢰성 향상을 위한 기술 진단 데이터(상태, 시간, 오류 코드).</li><li>인앱 구매 권한 상태 메타데이터.</li>",
-        "s3-title": "3. 선택 가능한 보존 모드",
-        "s3-list": "<li><strong>모드 A - 무보존(기본):</strong> 결과는 현재 세션에만 유지됩니다.</li><li><strong>모드 B - 로컬 저장:</strong> JSON을 기기 로컬 앱 저장소에 저장합니다.</li><li><strong>모드 C - 고객 관리 내보내기:</strong> 고객이 관리하는 저장 위치로 내보냅니다.</li>",
-        "s4-title": "4. BYOK 및 자격 증명",
-        "s4-desc": "PaiRobot은 BYOK 구조를 사용합니다. 입력된 API 키는 기기 로컬에서 암호화 저장되며 개발사 키 저장소로 업로드되지 않습니다.",
-        "s5-title": "5. 제3자 처리자",
-        "s5-list": "<li>Google Gemini API(활성화된 생성/요약/전사 기능).</li><li>사용자가 설정한 통신 서비스(LINE/Telegram/WeCom)의 사용자 트리거 워크플로우.</li>",
-        "s5-note": "PaiRobot은 개인 데이터를 판매하지 않습니다.",
-        "s6-title": "6. 사용자 동의 및 제어",
-        "s6-list": "<li>사용자는 내보내기 전 보존 모드를 선택할 수 있습니다.</li><li>로컬 내보내기 기록과 파일을 복사/내보내기/삭제할 수 있습니다.</li><li>필요 시 설정에서 AI 사용을 비활성화할 수 있습니다.</li>",
-        "s7-title": "7. 문의",
-        "s7-desc": "개인정보 관련 문의: <strong><a href=\"mailto:howly7777777@gmail.com\">howly7777777@gmail.com</a></strong>",
-        "legal-note": "언어 버전 간 차이가 있을 경우 App Review 참조는 영어 버전을 우선합니다."
-      }
-    };
-
-    function applyLanguage(lang) {
-      const dict = t[lang] || t.en;
-      Object.keys(dict).forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) el.innerHTML = dict[id];
-      });
-    }
-
-    function changeLanguage(lang) {
-      localStorage.setItem("pairobot_pref_lang", lang);
-      applyLanguage(lang);
-    }
-
-    window.onload = () => {
-      const saved = localStorage.getItem("pairobot_pref_lang");
-      let lang = "en";
-      if (saved && t[saved]) lang = saved;
-      const navLang = (navigator.language || "").toLowerCase();
-      if (!saved) {
-        if (navLang.includes("zh-tw") || navLang.includes("hant")) lang = "tw";
-        else if (navLang.includes("zh")) lang = "cn";
-        else if (navLang.includes("ja")) lang = "jp";
-        else if (navLang.includes("ko")) lang = "kr";
-      }
-      const selector = document.getElementById("lang-selector");
-      if (selector) selector.value = lang;
-      applyLanguage(lang);
-    };
-  </script>
 </body>
 </html>
