@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Governance - PaiRobot Meeting AI</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 20px;
+      color: #1f2937;
+      background: #ffffff;
+    }
+    h1, h2 { color: #111827; }
+    h2 { margin-top: 24px; margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #e5e7eb; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f9fafb; }
+    .note { color: #6b7280; font-size: 14px; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a href="index.html">← Back</a>
+    <h1 style="margin:0;">Data Governance</h1>
+  </div>
+
+  <p>
+    This page explains PaiRobot Meeting AI data handling model for enterprise and high-trust teams.
+  </p>
+
+  <h2>1) Default Retention Principle</h2>
+  <p>
+    PaiRobot Meeting AI ships with <strong>No Retention</strong> as default behavior.
+    Meeting output is not automatically persisted to vendor-managed database by default.
+  </p>
+
+  <h2>2) Retention Modes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Mode</th>
+        <th>Who controls storage</th>
+        <th>Typical use case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>No Retention (Default)</td>
+        <td>User session only</td>
+        <td>High-sensitivity meetings, legal-first teams</td>
+      </tr>
+      <tr>
+        <td>Local Device Storage</td>
+        <td>User device</td>
+        <td>Personal workflow and local-only record keeping</td>
+      </tr>
+      <tr>
+        <td>Customer-Managed Export</td>
+        <td>Customer-selected destination</td>
+        <td>Enterprise policy requiring customer-owned storage</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3) Meeting Output Structure</h2>
+  <p>
+    Standardized output is generated for operations and review:
+  </p>
+  <ul>
+    <li>Summary</li>
+    <li>Decision log</li>
+    <li>Action items (task, owner suggestion, due date, confidence)</li>
+    <li>Follow-up email draft</li>
+    <li>Review flags for low-confidence extraction</li>
+  </ul>
+
+  <h2>4) User Controls</h2>
+  <ul>
+    <li>Select retention mode before exporting meeting result</li>
+    <li>Export history stored on local device only</li>
+    <li>Delete record only, or delete record and exported file</li>
+    <li>Copy output as text or JSON for downstream workflows</li>
+  </ul>
+
+  <h2>5) Governance Positioning</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Governance Concern</th>
+        <th>PaiRobot Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Vendor data custody</td>
+        <td>Not default. User decides retention destination.</td>
+      </tr>
+      <tr>
+        <td>Storage location control</td>
+        <td>Supported via customer-managed export path.</td>
+      </tr>
+      <tr>
+        <td>Sensitive meeting content</td>
+        <td>No-retention mode available by default.</td>
+      </tr>
+      <tr>
+        <td>Auditability of local exports</td>
+        <td>Local export history index is available in app.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note">
+    Contact: <a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a>
+  </p>
+</body>
+</html>
