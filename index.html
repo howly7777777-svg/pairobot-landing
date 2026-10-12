@@ -3,356 +3,698 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PaiRobot - Global AI Chief of Staff</title>
+    <title>PaiRobot v3.0 - Personal AI Executive Assistant & Meeting Intelligence</title>
+    <meta name="description" content="PaiRobot v3.0: Executive personal AI assistant. 3s meeting voice to actions, 1-tap Apple Reminders & Calendar sync, SynapseOS adaptive dynamic timeline, SoloFinance receipt OCR, and 100% private Mac local AI on Apple Silicon.">
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #050B14; color: #ffffff; }
-        .hero-gradient { background: linear-gradient(135deg, #0A192F 0%, #007BFF 50%, #28A745 100%); opacity: 0.15; position: absolute; inset: 0; z-index: -1; }
-        .glass-panel { background: rgba(31, 41, 55, 0.5); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Noto Sans SC", "Noto Sans JP", "Noto Sans KR", sans-serif;
+            background-color: #070B14;
+            color: #F3F4F6;
+        }
+        .bg-mesh {
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.18) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(99, 102, 241, 0.12) 0px, transparent 60%);
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(96, 165, 250, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.25);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #60A5FA 0%, #34D399 50%, #A78BFA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pill-badge {
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            color: #93C5FD;
+        }
     </style>
 </head>
-<body class="antialiased relative min-h-screen flex flex-col">
-    <div class="hero-gradient"></div>
+<body class="min-h-screen bg-mesh flex flex-col antialiased selection:bg-blue-600 selection:text-white">
 
-    <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
-        <div class="text-2xl font-bold tracking-wider">PaiRobot <span class="text-blue-500">Prime</span></div>
-        <select id="lang-selector" onchange="changeLanguage(this.value)" class="bg-gray-800 text-sm rounded-lg border border-gray-600 px-3 py-1 focus:ring-blue-500 focus:border-blue-500">
-            <option value="en">English</option>
-            <option value="tw">繁體中文</option>
-            <option value="jp">日本語</option>
-            <option value="kr">한국어</option>
-        </select>
-    </nav>
+    <!-- Top Navigation -->
+    <header class="sticky top-0 z-50 glass-card border-b border-gray-800/80 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-400 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20 text-xl tracking-tight">
+                    P
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-white">PaiRobot</span>
+                    <span class="text-xs px-2 py-0.5 ml-1.5 rounded font-semibold pill-badge">v3.0 Grand Unified</span>
+                </div>
+            </div>
 
-    <main class="container mx-auto px-6 pt-16 pb-12 text-center flex-grow">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-            <span id="hero-title1">Not just a chat.</span><br>
-            <span id="hero-title2" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">Your AI Chief of Staff.</span>
-        </h1>
-        <h2 id="hero-subtitle" class="text-2xl md:text-3xl font-bold mb-8 text-gray-300">
-            Connect LINE, WeCom, and Telegram with one control center.
-        </h2>
-        <p id="hero-desc" class="text-lg md:text-xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Local-first security, cloud-scale intelligence, and executive-ready automation in one app.
-        </p>
+            <!-- Nav Controls -->
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <select id="lang-select" onchange="switchLanguage(this.value)" class="bg-gray-900/90 text-gray-200 text-xs md:text-sm font-medium rounded-lg border border-gray-700 px-3 py-1.5 focus:outline-none focus:border-blue-500 transition-colors">
+                        <option value="en">English (US)</option>
+                        <option value="zh-TW" selected>繁體中文</option>
+                        <option value="zh-CN">简体中文</option>
+                        <option value="ja">日本語</option>
+                        <option value="ko">한국어</option>
+                    </select>
+                </div>
+                <a href="#features" id="nav-features" class="hidden md:inline-block text-sm text-gray-300 hover:text-white transition">Features</a>
+                <a href="#security" id="nav-security" class="hidden md:inline-block text-sm text-gray-300 hover:text-white transition">Local Privacy</a>
+                <a href="./privacy.html" id="nav-privacy" class="text-sm text-gray-300 hover:text-blue-400 transition">Privacy Policy</a>
+                <a href="#download" class="inline-flex items-center px-4 py-1.5 rounded-lg text-xs md:text-sm font-medium bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition">
+                    <span id="nav-cta">Get Started</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="flex-grow">
+        <section class="max-w-6xl mx-auto px-6 pt-16 pb-20 text-center">
+            <!-- Pill Announcement -->
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full text-xs font-medium pill-badge mb-8">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span id="hero-pill">v3.0 Major Release: Meeting Trio + Dynamic Timeline + Tax Vault</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+                <span id="hero-title-prefix">Not Just Plain Text.</span><br>
+                <span class="text-gradient" id="hero-title-main">Your Executive Personal AI Robot.</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p id="hero-subtitle" class="text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-normal mb-10">
+                Meeting voice to actions in 3 seconds. Automatic schedule collision avoidance. Receipt tax deduction OCR. 100% private Mac local AI on Apple Silicon.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold bg-white text-gray-900 hover:bg-gray-100 shadow-xl shadow-white/10 transition">
+                    <svg class="w-5 h-5 mr-3 fill-current" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1.01.08 2.03-.49 2.65-1.24z"/></svg>
+                    <span id="btn-apple">Download on App Store</span>
+                </a>
+                <a href="./privacy.html" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold glass-card text-gray-200 hover:text-white hover:border-gray-500 transition">
+                    <span id="btn-privacy">View Privacy Commitment</span>
+                </a>
+            </div>
+
+            <!-- Metric Highlights Banner -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto pt-6 border-t border-gray-800/80">
+                <div class="glass-card rounded-2xl p-5 text-center">
+                    <div class="text-3xl font-extrabold text-blue-400 mb-1">3s</div>
+                    <div class="text-xs text-gray-400 font-medium" id="metric-1">Audio to Action Items</div>
+                </div>
+                <div class="glass-card rounded-2xl p-5 text-center">
+                    <div class="text-3xl font-extrabold text-emerald-400 mb-1">100%</div>
+                    <div class="text-xs text-gray-400 font-medium" id="metric-2">Mac Local AI Privacy</div>
+                </div>
+                <div class="glass-card rounded-2xl p-5 text-center">
+                    <div class="text-3xl font-extrabold text-cyan-400 mb-1">1-Tap</div>
+                    <div class="text-xs text-gray-400 font-medium" id="metric-3">Apple Reminders & Calendar</div>
+                </div>
+                <div class="glass-card rounded-2xl p-5 text-center">
+                    <div class="text-3xl font-extrabold text-amber-400 mb-1">5%</div>
+                    <div class="text-xs text-gray-400 font-medium" id="metric-4">Business Tax OCR Tracker</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Feature Pillars Section -->
+        <section id="features" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/80">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-3" id="feat-tag">Unified Executive Suite</h2>
+                <h3 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4" id="feat-heading">Four Pillars of Executive Power</h3>
+                <p class="text-gray-400 text-base md:text-lg" id="feat-subheading">Eliminate operational administrative overhead so leadership can focus entirely on strategic decision-making.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1: Meeting Trio -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 border-l-4 border-l-blue-500 flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6" id="card-1-pill">
+                            Pillar 01 · Voice Intelligence
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4" id="card-1-title">Meeting Intelligence Trio</h4>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6" id="card-1-desc">
+                            Capture audio in real time or import recordings. Within 3 seconds, PaiRobot delivers structured executive minutes, assigns action item owners and deadlines, drafts polished follow-up emails, and syncs directly to Apple Reminders and Calendar.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 text-xs md:text-sm text-gray-400 border-t border-gray-800 pt-5">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 mr-2.5"></span><span id="card-1-b1">Instant Owner & Deadline Extraction</span></li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 mr-2.5"></span><span id="card-1-b2">CEO Tone Follow-up Email Generator</span></li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 mr-2.5"></span><span id="card-1-b3">EventKit Native Sync (0% manual copying)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: SynapseOS Timeline -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 border-l-4 border-l-emerald-500 flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6" id="card-2-pill">
+                            Pillar 02 · Adaptive Scheduling
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4" id="card-2-title">SynapseOS Dynamic Timeline</h4>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6" id="card-2-desc">
+                            Fixed meetings in your calendar are immutable. SynapseOS inspects your schedule, warns of collision risks, and intelligently routes tasks into open focus blocks while tracking your daily energy workload to prevent executive fatigue.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 text-xs md:text-sm text-gray-400 border-t border-gray-800 pt-5">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2.5"></span><span id="card-2-b1">Calendar Collision Avoidance Engine</span></li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2.5"></span><span id="card-2-b2">Real-time Energy Load Percentage Gauge</span></li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2.5"></span><span id="card-2-b3">25-Minute Immersive Pomodoro Focus</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: SoloFinance Vision OCR -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 border-l-4 border-l-amber-500 flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-6" id="card-3-pill">
+                            Pillar 03 · Vision Tax Vault
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4" id="card-3-title">SoloFinance Vision OCR</h4>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6" id="card-3-desc">
+                            Snap receipts on business trips. Apple Vision scans vendor, date, and amount on-device in 1 second. Automatically classifies eligible 5% business tax deductions and produces CPA-compliant PDF and CSV reports for finance teams.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 text-xs md:text-sm text-gray-400 border-t border-gray-800 pt-5">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-amber-400 mr-2.5"></span><span id="card-3-b1">Apple Vision On-Device 1-Second Recognition</span></li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-amber-400 mr-2.5"></span><span id="card-3-b2">5% Value-Added Tax Deductible Accounting</span></li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-amber-400 mr-2.5"></span><span id="card-3-b3">Official CPA-Ready PDF and CSV Export</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Mac Host & Local AI -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 border-l-4 border-l-purple-500 flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20 mb-6" id="card-4-pill">
+                            Pillar 04 · Sovereign Privacy
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4" id="card-4-title">100% Private Mac Host Local AI</h4>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6" id="card-4-desc">
+                            Pair your iPhone with your Mac desk host. Leverage Apple Silicon and local Ollama (Llama 3 / Mistral) for heavy AI analysis. Commercial contracts and strategic minutes never touch third-party cloud servers.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 text-xs md:text-sm text-gray-400 border-t border-gray-800 pt-5">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2.5"></span><span id="card-4-b1">Zero Cloud Data Leaks Guaranteed</span></li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2.5"></span><span id="card-4-b2">Local Ollama Neural Processing on Apple Silicon</span></li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2.5"></span><span id="card-4-b3">256-bit Secure Enclave Biometric Vault</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security & Local-First Architecture Comparison -->
+        <section id="security" class="max-w-6xl mx-auto px-6 py-20 border-t border-gray-800/80">
+            <div class="glass-card rounded-3xl p-8 md:p-12 border border-blue-500/20 relative overflow-hidden">
+                <div class="max-w-3xl">
+                    <span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2 block" id="sec-tag">Privacy Sovereign Architecture</span>
+                    <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-6" id="sec-title">Enterprise Confidentiality by Design</h3>
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-8" id="sec-desc">
+                        Conventional AI apps route sensitive audio recordings and internal documents through multitenant public cloud servers, creating severe compliance risks. PaiRobot is built local-first: all sensitive audio, calendar items, and tax receipts remain strictly within your personal Apple devices.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+                        <div class="bg-gray-900/80 rounded-xl p-4 border border-gray-800">
+                            <div class="font-bold text-white text-sm mb-1" id="sec-point-1-title">Local Peer-to-Peer Pairing</div>
+                            <div class="text-xs text-gray-400" id="sec-point-1-desc">iPhone and Mac communicate over secure local Wi-Fi / LAN without cloud intermediaries.</div>
+                        </div>
+                        <div class="bg-gray-900/80 rounded-xl p-4 border border-gray-800">
+                            <div class="font-bold text-white text-sm mb-1" id="sec-point-2-title">Apple App Sandbox Strict Isolation</div>
+                            <div class="text-xs text-gray-400" id="sec-point-2-desc">Strict compliance with App Store Guideline 2.4.5(i) via App-Scoped Bookmarks.</div>
+                        </div>
+                        <div class="bg-gray-900/80 rounded-xl p-4 border border-gray-800">
+                            <div class="font-bold text-white text-sm mb-1" id="sec-point-3-title">Bring Your Own Key (BYOK)</div>
+                            <div class="text-xs text-gray-400" id="sec-point-3-desc">If using cloud LLMs, your personal API keys are encrypted locally and never sent to our servers.</div>
+                        </div>
+                        <div class="bg-gray-900/80 rounded-xl p-4 border border-gray-800">
+                            <div class="font-bold text-white text-sm mb-1" id="sec-point-4-title">No User Data Resale or Mining</div>
+                            <div class="text-xs text-gray-400" id="sec-point-4-desc">Zero tracking SDKs, zero data broker transmission, and zero model training on your data.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download & Universal Support Section -->
+        <section id="download" class="max-w-4xl mx-auto px-6 py-20 text-center">
+            <h3 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight" id="dl-title">Available on iOS & macOS</h3>
+            <p class="text-gray-300 text-base md:text-lg mb-10 max-w-2xl mx-auto" id="dl-subtitle">
+                Purchase once with Universal Purchase and deploy across your iPhone, iPad, and Mac. Start your 30-day full-feature free trial today.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30 transition">
+                    <span id="dl-cta">Start 30-Day Free Trial</span>
+                </a>
+                <a href="./privacy.html" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold glass-card text-gray-200 hover:text-white transition">
+                    <span id="dl-privacy">Read Privacy Policy</span>
+                </a>
+            </div>
+        </section>
     </main>
 
-    <section class="py-12">
-        <div class="container mx-auto px-6 max-w-4xl text-center">
-            <div class="glass-panel rounded-2xl p-8 border-t-4 border-yellow-500">
-                <h3 id="vault-title" class="text-2xl font-bold mb-3 text-yellow-500">Encrypted Vault</h3>
-                <p id="vault-desc" class="text-gray-300">
-                    Keep sensitive identity records and strategic files protected with local encrypted storage.
-                </p>
+    <!-- Footer -->
+    <footer class="glass-card border-t border-gray-800/80 py-10 px-6 mt-12">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-sm">P</div>
+                <span class="text-sm font-semibold text-gray-200">PaiRobot · Vajrapadma Development</span>
             </div>
-        </div>
-    </section>
-
-    <section class="py-14 border-t border-gray-800">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-10">
-                <h2 id="mode-title" class="text-3xl font-bold mb-4">How Executives Use PaiRobot</h2>
-                <p id="mode-desc" class="text-gray-400">Three practical modes that match real leadership workflows.</p>
+            <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-gray-400">
+                <a href="#features" class="hover:text-white transition" id="footer-feat">Features</a>
+                <a href="#security" class="hover:text-white transition" id="footer-sec">Security</a>
+                <a href="./privacy.html" class="hover:text-blue-400 transition" id="footer-priv">Privacy Policy</a>
+                <a href="mailto:howly7777777@gmail.com" class="hover:text-white transition">Support: howly7777777@gmail.com</a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                <div class="glass-panel rounded-2xl p-6">
-                    <h3 id="mode-1-title" class="text-lg font-bold text-blue-400 mb-3">Mode 1: Command Center</h3>
-                    <p id="mode-1-desc" class="text-sm text-gray-300 leading-relaxed">Use one messaging channel as your daily command line. Ask PaiRobot to fetch calendar, summarize unread email, and run approved actions.</p>
-                </div>
-                <div class="glass-panel rounded-2xl p-6">
-                    <h3 id="mode-2-title" class="text-lg font-bold text-green-400 mb-3">Mode 2: Morning Briefing</h3>
-                    <p id="mode-2-desc" class="text-sm text-gray-300 leading-relaxed">Build a custom morning template with the sections you need: top priorities, key meetings, risk alerts, and important follow-ups.</p>
-                </div>
-                <div class="glass-panel rounded-2xl p-6">
-                    <h3 id="mode-3-title" class="text-lg font-bold text-cyan-400 mb-3">Mode 3: Meeting War Room</h3>
-                    <p id="mode-3-desc" class="text-sm text-gray-300 leading-relaxed">Before each meeting, PaiRobot packages agenda, related mail threads, historical decisions, and critical files into one briefing bundle.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-gray-900/40 border-t border-gray-800">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <div class="text-center mb-12">
-                <h2 id="flow-title" class="text-3xl font-bold mb-4">7-Day Executive Onboarding Flow</h2>
-                <p id="flow-desc" class="text-gray-400">A practical rollout path to reach measurable daily impact in one week.</p>
-            </div>
-            <ol class="space-y-4 text-left text-gray-300">
-                <li id="flow-1" class="glass-panel rounded-xl p-4">Day 1: Connect one messaging channel and verify command response.</li>
-                <li id="flow-2" class="glass-panel rounded-xl p-4">Day 2: Connect calendar and define your default briefing time.</li>
-                <li id="flow-3" class="glass-panel rounded-xl p-4">Day 3: Connect mailbox and set unread summary rules.</li>
-                <li id="flow-4" class="glass-panel rounded-xl p-4">Day 4: Configure sensitive data policy for local-only analysis.</li>
-                <li id="flow-5" class="glass-panel rounded-xl p-4">Day 5: Enable risk confirmation for high-impact actions.</li>
-                <li id="flow-6" class="glass-panel rounded-xl p-4">Day 6: Create your first meeting war-room template.</li>
-                <li id="flow-7" class="glass-panel rounded-xl p-4">Day 7: Review outcomes and optimize your briefing template.</li>
-            </ol>
-        </div>
-    </section>
-
-    <section id="setup" class="py-16 bg-gray-900/50 border-t border-gray-800">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <div class="text-center mb-12">
-                <h2 id="guide-title" class="text-3xl font-bold mb-4">Setup Guide</h2>
-                <p id="guide-desc" class="text-gray-400">Connect your messaging agents in 3 steps.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                <div class="glass-panel rounded-2xl p-6 border-green-500/30">
-                    <h3 class="text-xl font-bold mb-4 text-green-400">LINE Bot</h3>
-                    <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
-                        <li id="line-1">Open LINE Developers Console.</li>
-                        <li id="line-2">Create a Messaging API channel.</li>
-                        <li id="line-3">Copy Channel Access Token.</li>
-                        <li id="line-4" class="text-green-400 font-bold">Paste it into PaiRobot Settings.</li>
-                    </ol>
-                </div>
-                <div class="glass-panel rounded-2xl p-6 border-blue-500/30">
-                    <h3 class="text-xl font-bold mb-4 text-blue-400">WeCom</h3>
-                    <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
-                        <li id="wecom-1">Log in to WeCom Admin.</li>
-                        <li id="wecom-2">Create an application.</li>
-                        <li id="wecom-3">Copy CorpID, AgentId, Secret.</li>
-                        <li id="wecom-4" class="text-blue-400 font-bold">Paste all keys into PaiRobot Settings.</li>
-                    </ol>
-                </div>
-                <div class="glass-panel rounded-2xl p-6 border-cyan-500/30">
-                    <h3 class="text-xl font-bold mb-4 text-cyan-400">Telegram</h3>
-                    <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
-                        <li id="tg-1">Search @BotFather.</li>
-                        <li id="tg-2">Send /newbot.</li>
-                        <li id="tg-3">Copy HTTP API Token.</li>
-                        <li id="tg-4" class="text-cyan-400 font-bold">Paste it into PaiRobot Settings.</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-[#050B14] border-t border-gray-800 py-8 mt-auto">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <p>&copy; 2026 PaiRobot Technology. All rights reserved.</p>
-            <div class="flex gap-6">
-                <a id="footer-privacy" href="privacy.html" class="hover:text-blue-400 transition">Privacy Policy</a>
-                <a id="footer-terms" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" class="hover:text-blue-400 transition">Terms of Use</a>
-                <a id="footer-support" href="https://docs.google.com/forms/d/e/1FAIpQLSeaiiU50PLWTUF4ERp1noDXMYUF0w6Ujuz_0kxs7d0aYRKxwQ/viewform" target="_blank" class="hover:text-blue-400 transition font-bold text-blue-500">Support Center</a>
+            <div class="text-xs text-gray-500">
+                &copy; 2026 Vajrapadma. All rights reserved.
             </div>
         </div>
     </footer>
 
+    <!-- Multilingual Reactive Script -->
     <script>
         const translations = {
-            en: {
-                "hero-title1": "Not just a chat.",
-                "hero-title2": "Your AI Chief of Staff.",
-                "hero-subtitle": "Connect LINE, WeCom, and Telegram with one control center.",
-                "hero-desc": "Local-first security, cloud-scale intelligence, and executive-ready automation in one app.",
-                "vault-title": "Encrypted Vault",
-                "vault-desc": "Keep sensitive identity records and strategic files protected with local encrypted storage.",
-                "mode-title": "How Executives Use PaiRobot",
-                "mode-desc": "Three practical modes that match real leadership workflows.",
-                "mode-1-title": "Mode 1: Command Center",
-                "mode-1-desc": "Use one messaging channel as your daily command line. Ask PaiRobot to fetch calendar, summarize unread email, and run approved actions.",
-                "mode-2-title": "Mode 2: Morning Briefing",
-                "mode-2-desc": "Build a custom morning template with the sections you need: top priorities, key meetings, risk alerts, and important follow-ups.",
-                "mode-3-title": "Mode 3: Meeting War Room",
-                "mode-3-desc": "Before each meeting, PaiRobot packages agenda, related mail threads, historical decisions, and critical files into one briefing bundle.",
-                "flow-title": "7-Day Executive Onboarding Flow",
-                "flow-desc": "A practical rollout path to reach measurable daily impact in one week.",
-                "flow-1": "Day 1: Connect one messaging channel and verify command response.",
-                "flow-2": "Day 2: Connect calendar and define your default briefing time.",
-                "flow-3": "Day 3: Connect mailbox and set unread summary rules.",
-                "flow-4": "Day 4: Configure sensitive data policy for local-only analysis.",
-                "flow-5": "Day 5: Enable risk confirmation for high-impact actions.",
-                "flow-6": "Day 6: Create your first meeting war-room template.",
-                "flow-7": "Day 7: Review outcomes and optimize your briefing template.",
-                "guide-title": "Setup Guide",
-                "guide-desc": "Connect your messaging agents in 3 steps.",
-                "line-1": "Open LINE Developers Console.",
-                "line-2": "Create a Messaging API channel.",
-                "line-3": "Copy Channel Access Token.",
-                "line-4": "Paste it into PaiRobot Settings.",
-                "wecom-1": "Log in to WeCom Admin.",
-                "wecom-2": "Create an application.",
-                "wecom-3": "Copy CorpID, AgentId, Secret.",
-                "wecom-4": "Paste all keys into PaiRobot Settings.",
-                "tg-1": "Search @BotFather.",
-                "tg-2": "Send /newbot.",
-                "tg-3": "Copy HTTP API Token.",
-                "tg-4": "Paste it into PaiRobot Settings.",
-                "footer-privacy": "Privacy Policy",
-                "footer-terms": "Terms of Use",
-                "footer-support": "Support Center"
+            'zh-TW': {
+                navFeatures: '核心功能',
+                navSecurity: '本地隱私',
+                navPrivacy: '隱私權政策',
+                navCta: '立即體驗',
+                heroPill: 'v3.0 重大升級：會議戰情 + 動態排程 + 報稅金庫',
+                heroTitlePrefix: '不只是文字生成。',
+                heroTitleMain: '您的全維個人 AI 幕僚。',
+                heroSubtitle: '會議語音 3 秒自動理清待辦。行事曆衝突智能避讓。拍立得發票 5% 營業稅 OCR 扣抵。支援 Mac 本地離線大模型，隱私零外洩。',
+                btnApple: '前往 App Store 下載',
+                btnPrivacy: '查看隱私保護承諾',
+                metric1: '語音 3 秒極速拆解行動項',
+                metric2: 'Mac 本地離線大模型隱私',
+                metric3: '一鍵同步 Apple 提醒與行事曆',
+                metric4: '拍立得發票 5% 營業稅扣抵',
+                featTag: '全維高管核心架構',
+                featHeading: '四大旗艦核心戰力',
+                featSubheading: '徹底解放瑣碎的行政排程與記帳負擔，讓企業高管專注於最高價值的決策。',
+                card1Pill: '戰力 01 · 語音會議戰情',
+                card1Title: '會議戰情三件套',
+                card1Desc: '實時錄音或音訊匯入，3 秒內自動輸出結構化會議逐字稿、提取負責人與截止日、產出高管語氣 Follow-up 信件，並一鍵自動落地至 Apple 原生提醒事項與行事曆。',
+                card1B1: '智能標註負責人與截止期限',
+                card1B2: '即時產出執行長級追蹤信草稿',
+                card1B3: 'EventKit 原生同步（零手動複製）',
+                card2Pill: '戰力 02 · 自適應時間軸',
+                card2Title: 'SynapseOS 動態排程',
+                card2Desc: '固定會議無法變動？SynapseOS 自動偵測行事曆衝突，在會議空檔中智慧插入待辦任務，並計算每日精力負荷儀表板，搭配 25 分鐘番茄鐘沉浸專注。',
+                card2B1: '行事曆會議衝突智能避讓引擎',
+                card2B2: '精力負荷即時監控儀表板',
+                card2B3: '25 分鐘沉浸式深度專注番茄鐘',
+                card3Pill: '戰力 03 · 報稅視覺金庫',
+                card3Title: 'SoloFinance 發票 OCR',
+                card3Desc: '出差宴客發票拍照，Apple Vision 端側 1 秒精準讀取店家、日期與金額，自動歸入 5% 營業稅扣抵額度，一鍵匯出會計標準 PDF 與 CSV 報稅明細。',
+                card3B1: 'Apple Vision 本機端側 1 秒極速辨識',
+                card3B2: '5% 營業稅扣抵自動試算與累計',
+                card3B3: '會計師專用標準 PDF / CSV 匯出',
+                card4Pill: '戰力 04 · 本地數據主權',
+                card4Title: 'Mac 幕僚主機離線 AI',
+                card4Desc: 'iPhone 外出捕獲語音與單據，桌上 Mac 自動接棒重負載 AI 分析。支援 Apple Silicon 本地 Ollama 離線大模型，商業合約與機密會議永不上傳第三方雲端。',
+                card4B1: '100% 本地端離線大模型零外洩',
+                card4B2: 'Apple Silicon 神經引擎原生加速',
+                card4B3: '256 位元硬體金庫與生物辨識保護',
+                secTag: '數據隱私自主架構',
+                secTitle: '從底層設計捍衛企業最高機密',
+                secDesc: '一般的 AI 軟體將語音與商業檔案上傳至多租戶公有雲，存在嚴重的資安與外洩風險。PaiRobot 採取本機優先 (Local-First) 架構，所有機密資料與單據牢牢鎖在您的個人 Apple 設備中。',
+                secPoint1Title: '區域網路點對點安全連線',
+                secPoint1Desc: 'iPhone 與 Mac 透過本地 Wi-Fi / LAN 加密傳輸，不經過任何雲端中繼。',
+                secPoint2Title: '嚴格遵循 Apple 沙盒隔離',
+                secPoint2Desc: '完全符合 Guideline 2.4.5(i)，採用 App-Scoped Bookmarks 與容器目錄。',
+                secPoint3Title: '自帶金鑰 (BYOK) 架構',
+                secPoint3Desc: '若使用第三方大模型，API 金鑰存放於本機硬體安全晶片，絕不上傳本軟體伺服器。',
+                secPoint4Title: '絕不轉售或訓練用戶數據',
+                secPoint4Desc: '零第三方追蹤 SDK，零廣告聯盟回傳，絕不將您的資料用於任何模型訓練。',
+                dlTitle: 'iOS 與 macOS 雙端同步升級',
+                dlSubtitle: '支援 Universal Purchase 通用購買，一次解鎖 iPhone、iPad 與 Mac 完整功能。立即開啟 30 天全功能免費體驗。',
+                dlCta: '開啟 30 天免費體驗',
+                dlPrivacy: '查閱完整隱私權政策',
+                footerFeat: '核心功能',
+                footerSec: '安全隱私',
+                footerPriv: '隱私權政策'
             },
-            tw: {
-                "hero-title1": "不只是聊天。",
-                "hero-title2": "你的 AI 幕僚長。",
-                "hero-subtitle": "一個控制中心，串接 LINE、企業微信、Telegram。",
-                "hero-desc": "本機優先安全、雲端等級智慧、可直接落地的高階自動化。",
-                "vault-title": "加密機密金庫",
-                "vault-desc": "將身分資料與關鍵檔案安全保存在本機加密儲存中。",
-                "mode-title": "高階人士的三種使用模式",
-                "mode-desc": "以真實管理場景設計，快速帶出可量化價值。",
-                "mode-1-title": "模式 1：指揮中心",
-                "mode-1-desc": "以一個常用通訊軟體作為日常入口，快速查行程、讀未讀信重點、執行已核准任務。",
-                "mode-2-title": "模式 2：晨報引擎",
-                "mode-2-desc": "自訂晨報模板，挑選你要的欄位：今日重點、關鍵會議、風險提醒、待追蹤事項。",
-                "mode-3-title": "模式 3：會議戰情包",
-                "mode-3-desc": "會前自動整合議程、相關郵件脈絡、歷史決策與關鍵檔案，形成單一簡報包。",
-                "flow-title": "7 天高階導入流程",
-                "flow-desc": "一週內從完成綁定到產出可衡量成果的實戰路徑。",
-                "flow-1": "Day 1：先接一個主要通訊渠道，驗證可正常收發指令。",
-                "flow-2": "Day 2：連結行事曆並設定晨報預設時間。",
-                "flow-3": "Day 3：連結信箱並設定未讀摘要規則。",
-                "flow-4": "Day 4：設定敏感資料僅本機分析策略。",
-                "flow-5": "Day 5：開啟高風險操作的二次確認。",
-                "flow-6": "Day 6：建立第一份會議戰情包模板。",
-                "flow-7": "Day 7：檢視成果並優化晨報模板。",
-                "guide-title": "快速部署指南",
-                "guide-desc": "三步驟完成通訊特務綁定。",
-                "line-1": "前往 LINE Developers 後台。",
-                "line-2": "建立 Messaging API 頻道。",
-                "line-3": "複製 Channel Access Token。",
-                "line-4": "貼到 PaiRobot 設定頁。",
-                "wecom-1": "登入企業微信管理後台。",
-                "wecom-2": "建立新的應用。",
-                "wecom-3": "複製 CorpID、AgentId、Secret。",
-                "wecom-4": "貼到 PaiRobot 設定頁。",
-                "tg-1": "搜尋 @BotFather。",
-                "tg-2": "發送 /newbot。",
-                "tg-3": "複製 HTTP API Token。",
-                "tg-4": "貼到 PaiRobot 設定頁。",
-                "footer-privacy": "隱私權政策",
-                "footer-terms": "使用條款",
-                "footer-support": "專屬客服"
+            'zh-CN': {
+                navFeatures: '核心功能',
+                navSecurity: '本地隐私',
+                navPrivacy: '隐私政策',
+                navCta: '立即体验',
+                heroPill: 'v3.0 重大升级：会议战情 + 动态日程 + 报税金库',
+                heroTitlePrefix: '不只是文本生成。',
+                heroTitleMain: '您的全维个人 AI 幕僚。',
+                heroSubtitle: '会议语音 3 秒自动理清待办。日历冲突智能避让。发票 5% 增值税 OCR 抵扣。支持 Mac 本地离线大模型，隐私零外泄。',
+                btnApple: '前往 App Store 下载',
+                btnPrivacy: '查看隐私保护承诺',
+                metric1: '语音 3 秒极速拆解行动项',
+                metric2: 'Mac 本地离线大模型隐私',
+                metric3: '一键同步 Apple 提醒与日历',
+                metric4: '发票 5% 增值税抵扣',
+                featTag: '全维高管核心架构',
+                featHeading: '四大旗舰核心战力',
+                featSubheading: '彻底解放繁琐的行政日程与记账负担，让企业高管专注最高价值的决策。',
+                card1Pill: '战力 01 · 语音会议战情',
+                card1Title: '会议战情三件套',
+                card1Desc: '实时录音或音频导入，3 秒内自动输出结构化会议逐字稿、提取负责人与截止日、生成高管语气 Follow-up 信件，并一键自动同步至 Apple 原生提醒事项与日历。',
+                card1B1: '智能标注负责人与截止期限',
+                card1B2: '即时产出执行长级追踪信草稿',
+                card1B3: 'EventKit 原生同步（零手动复制）',
+                card2Pill: '战力 02 · 自适应时间轴',
+                card2Title: 'SynapseOS 动态日程',
+                card2Desc: '固定会议无法变动？SynapseOS 自动侦测日历冲突，在会议空档中智慧插入待办任务，并计算每日精力负荷仪表盘，搭配 25 分钟番茄钟沉浸专注。',
+                card2B1: '日历会议冲突智能避让引擎',
+                card2B2: '精力负荷实时监控仪表盘',
+                card2B3: '25 分钟沉浸式深度专注番茄钟',
+                card3Pill: '战力 03 · 报税视觉金库',
+                card3Title: 'SoloFinance 发票 OCR',
+                card3Desc: '差旅餐饮发票拍照，Apple Vision 端侧 1 秒精准读取商家、日期与金额，自动计入 5% 增值税抵扣额度，一键导出会计标准 PDF 与 CSV 报税明细。',
+                card3B1: 'Apple Vision 本机端侧 1 秒极速识别',
+                card3B2: '5% 增值税抵扣自动试算与累计',
+                card3B3: '会计师专用标准 PDF / CSV 导出',
+                card4Pill: '战力 04 · 本地数据主权',
+                card4Title: 'Mac 幕僚主机离线 AI',
+                card4Desc: 'iPhone 外出捕捉语音与单据，桌上 Mac 自动接管高负荷 AI 分析。支持 Apple Silicon 本地 Ollama 离线大模型，商业合同与机密会议永不上载第三方云端。',
+                card4B1: '100% 本地端离线大模型零外泄',
+                card4B2: 'Apple Silicon 神经网络引擎原生加速',
+                card4B3: '256 位硬件金库与生物识别保护',
+                secTag: '数据隐私自主架构',
+                secTitle: '从底层设计捍卫企业最高机密',
+                secDesc: '常规 AI 软件将语音与商业文件上传至多租户公有云，存在严重的泄露隐患。PaiRobot 采取本地优先架构，所有机密数据与单据牢牢锁在您的个人 Apple 设备中。',
+                secPoint1Title: '局域网点对点安全连接',
+                secPoint1Desc: 'iPhone 与 Mac 通过本地 Wi-Fi / LAN 加密传输，不经过任何云端中继。',
+                secPoint2Title: '严格遵循 Apple 沙盒隔离',
+                secPoint2Desc: '完全符合 Guideline 2.4.5(i)，采用 App-Scoped Bookmarks 与容器目录。',
+                secPoint3Title: '自带密钥 (BYOK) 架构',
+                secPoint3Desc: '若使用第三方大模型，API 密钥存放于本机硬件安全芯片，绝不上载本软件服务器。',
+                secPoint4Title: '绝不转售或训练用户数据',
+                secPoint4Desc: '零第三方追踪 SDK，零广告联盟回传，绝不将您的资料用于任何模型训练。',
+                dlTitle: 'iOS 与 macOS 双端同步升级',
+                dlSubtitle: '支持 Universal Purchase 通用购买，一次解锁 iPhone、iPad 与 Mac 完整功能。立即开启 30 天全功能免费体验。',
+                dlCta: '开启 30 天免费体验',
+                dlPrivacy: '查阅完整隐私政策',
+                footerFeat: '核心功能',
+                footerSec: '安全隐私',
+                footerPriv: '隐私政策'
             },
-            jp: {
-                "hero-title1": "ただのチャットではない。",
-                "hero-title2": "あなたの AI 参謀。",
-                "hero-subtitle": "1つのコントロールセンターで LINE・WeCom・Telegram を接続。",
-                "hero-desc": "ローカル優先のセキュリティとクラウド級の知能を、実務自動化まで一体化。",
-                "vault-title": "暗号化シークレット金庫",
-                "vault-desc": "重要な個人情報と戦略ファイルをローカル暗号化ストレージで保護。",
-                "mode-title": "エグゼクティブ向け利用モード",
-                "mode-desc": "実務に直結する3つの運用モード。",
-                "mode-1-title": "モード1：コマンドセンター",
-                "mode-1-desc": "普段使う1つのチャネルを司令窓口にし、予定確認・未読要約・承認済み操作を実行。",
-                "mode-2-title": "モード2：朝ブリーフィング",
-                "mode-2-desc": "優先事項、重要会議、リスク通知、フォローアップを含む朝レポートをテンプレート化。",
-                "mode-3-title": "モード3：会議ウォールーム",
-                "mode-3-desc": "会議前に議題、関連メール、過去の意思決定、重要資料を1つに自動統合。",
-                "flow-title": "7日間オンボーディング",
-                "flow-desc": "1週間で導入から日次成果まで到達する実践フロー。",
-                "flow-1": "Day 1：主要なメッセージングチャネルを1つ接続。",
-                "flow-2": "Day 2：カレンダー連携と朝ブリーフィング時刻設定。",
-                "flow-3": "Day 3：メール連携と未読要約ルール設定。",
-                "flow-4": "Day 4：機密データのローカル分析ポリシー設定。",
-                "flow-5": "Day 5：高リスク操作の二重確認を有効化。",
-                "flow-6": "Day 6：最初の会議ウォールームテンプレート作成。",
-                "flow-7": "Day 7：運用結果を見直して最適化。",
-                "guide-title": "セットアップガイド",
-                "guide-desc": "3ステップでメッセージング連携を完了。",
-                "line-1": "LINE Developers を開く。",
-                "line-2": "Messaging API チャネルを作成。",
-                "line-3": "Channel Access Token をコピー。",
-                "line-4": "PaiRobot 設定画面に貼り付け。",
-                "wecom-1": "WeCom 管理画面にログイン。",
-                "wecom-2": "新規アプリを作成。",
-                "wecom-3": "CorpID・AgentId・Secret をコピー。",
-                "wecom-4": "PaiRobot 設定画面に貼り付け。",
-                "tg-1": "@BotFather を検索。",
-                "tg-2": "/newbot を送信。",
-                "tg-3": "HTTP API Token をコピー。",
-                "tg-4": "PaiRobot 設定画面に貼り付け。",
-                "footer-privacy": "プライバシーポリシー",
-                "footer-terms": "利用規約",
-                "footer-support": "サポート"
+            'en': {
+                navFeatures: 'Features',
+                navSecurity: 'Local Privacy',
+                navPrivacy: 'Privacy Policy',
+                navCta: 'Get Started',
+                heroPill: 'v3.0 Major Release: Meeting Trio + Dynamic Timeline + Tax Vault',
+                heroTitlePrefix: 'Not Just Plain Text.',
+                heroTitleMain: 'Your Executive Personal AI Robot.',
+                heroSubtitle: 'Meeting voice to actions in 3 seconds. Automatic schedule collision avoidance. Receipt tax deduction OCR. 100% private Mac local AI on Apple Silicon.',
+                btnApple: 'Download on App Store',
+                btnPrivacy: 'View Privacy Commitment',
+                metric1: 'Audio to Action Items in 3s',
+                metric2: '100% Mac Local AI Privacy',
+                metric3: '1-Tap Apple Reminders & Calendar',
+                metric4: '5% Business Tax OCR Deduction',
+                featTag: 'Unified Executive Suite',
+                featHeading: 'Four Pillars of Executive Power',
+                featSubheading: 'Eliminate operational administrative overhead so leadership can focus entirely on strategic decision-making.',
+                card1Pill: 'Pillar 01 · Voice Intelligence',
+                card1Title: 'Meeting Intelligence Trio',
+                card1Desc: 'Capture audio in real time or import recordings. Within 3 seconds, PaiRobot delivers structured executive minutes, assigns action item owners and deadlines, drafts polished follow-up emails, and syncs directly to Apple Reminders and Calendar.',
+                card1B1: 'Instant Owner & Deadline Extraction',
+                card1B2: 'CEO Tone Follow-up Email Generator',
+                card1B3: 'EventKit Native Sync (0% manual copying)',
+                card2Pill: 'Pillar 02 · Adaptive Scheduling',
+                card2Title: 'SynapseOS Dynamic Timeline',
+                card2Desc: 'Fixed meetings in your calendar are immutable. SynapseOS inspects your schedule, warns of collision risks, and intelligently routes tasks into open focus blocks while tracking your daily energy workload to prevent executive fatigue.',
+                card2B1: 'Calendar Collision Avoidance Engine',
+                card2B2: 'Real-time Energy Load Percentage Gauge',
+                card2B3: '25-Minute Immersive Pomodoro Focus',
+                card3Pill: 'Pillar 03 · Vision Tax Vault',
+                card3Title: 'SoloFinance Vision OCR',
+                card3Desc: 'Snap receipts on business trips. Apple Vision scans vendor, date, and amount on-device in 1 second. Automatically classifies eligible 5% business tax deductions and produces CPA-compliant PDF and CSV reports for finance teams.',
+                card3B1: 'Apple Vision On-Device 1-Second Recognition',
+                card3B2: '5% Value-Added Tax Deductible Accounting',
+                card3B3: 'Official CPA-Ready PDF and CSV Export',
+                card4Pill: 'Pillar 04 · Sovereign Privacy',
+                card4Title: '100% Private Mac Host Local AI',
+                card4Desc: 'Pair your iPhone with your Mac desk host. Leverage Apple Silicon and local Ollama (Llama 3 / Mistral) for heavy AI analysis. Commercial contracts and strategic minutes never touch third-party cloud servers.',
+                card4B1: 'Zero Cloud Data Leaks Guaranteed',
+                card4B2: 'Local Ollama Neural Processing on Apple Silicon',
+                card4B3: '256-bit Secure Enclave Biometric Vault',
+                secTag: 'Privacy Sovereign Architecture',
+                secTitle: 'Enterprise Confidentiality by Design',
+                secDesc: 'Conventional AI apps route sensitive audio recordings and internal documents through multitenant public cloud servers, creating severe compliance risks. PaiRobot is built local-first: all sensitive audio, calendar items, and tax receipts remain strictly within your personal Apple devices.',
+                secPoint1Title: 'Local Peer-to-Peer Pairing',
+                secPoint1Desc: 'iPhone and Mac communicate over secure local Wi-Fi / LAN without cloud intermediaries.',
+                secPoint2Title: 'Apple App Sandbox Strict Isolation',
+                secPoint2Desc: 'Strict compliance with App Store Guideline 2.4.5(i) via App-Scoped Bookmarks.',
+                secPoint3Title: 'Bring Your Own Key (BYOK)',
+                secPoint3Desc: 'If using cloud LLMs, your personal API keys are encrypted locally and never sent to our servers.',
+                secPoint4Title: 'No User Data Resale or Mining',
+                secPoint4Desc: 'Zero tracking SDKs, zero data broker transmission, and zero model training on your data.',
+                dlTitle: 'Available on iOS & macOS',
+                dlSubtitle: 'Purchase once with Universal Purchase and deploy across your iPhone, iPad, and Mac. Start your 30-day full-feature free trial today.',
+                dlCta: 'Start 30-Day Free Trial',
+                dlPrivacy: 'Read Privacy Policy',
+                footerFeat: 'Features',
+                footerSec: 'Security',
+                footerPriv: 'Privacy Policy'
             },
-            kr: {
-                "hero-title1": "단순한 채팅이 아닙니다.",
-                "hero-title2": "당신의 AI 비서실장.",
-                "hero-subtitle": "하나의 컨트롤 센터로 LINE, WeCom, Telegram을 연결하세요.",
-                "hero-desc": "로컬 우선 보안, 클라우드급 지능, 임원급 자동화를 하나의 앱에 담았습니다.",
-                "vault-title": "암호화 기밀 금고",
-                "vault-desc": "중요 신원정보와 전략 문서를 로컬 암호화 저장소로 안전하게 보호합니다.",
-                "mode-title": "임원을 위한 3가지 사용 모드",
-                "mode-desc": "실제 업무 흐름에 맞춘 실행형 운영 모델입니다.",
-                "mode-1-title": "모드 1: 커맨드 센터",
-                "mode-1-desc": "가장 자주 쓰는 메신저 하나를 명령 창구로 사용해 일정 확인, 미읽은 메일 요약, 승인된 작업 실행을 처리합니다.",
-                "mode-2-title": "모드 2: 모닝 브리핑",
-                "mode-2-desc": "핵심 우선순위, 주요 회의, 리스크 알림, 후속 조치를 포함한 브리핑 템플릿을 구성합니다.",
-                "mode-3-title": "모드 3: 회의 워룸",
-                "mode-3-desc": "회의 전 의제, 관련 메일 스레드, 과거 결정, 핵심 문서를 하나의 브리핑 패키지로 자동 구성합니다.",
-                "flow-title": "7일 임원 온보딩 플로우",
-                "flow-desc": "일주일 안에 도입부터 일일 성과까지 연결하는 실행 경로입니다.",
-                "flow-1": "Day 1: 핵심 메신저 1개 연결 및 명령 응답 확인.",
-                "flow-2": "Day 2: 캘린더 연결 및 브리핑 시간 설정.",
-                "flow-3": "Day 3: 메일 연결 및 미읽은 메일 요약 규칙 설정.",
-                "flow-4": "Day 4: 민감정보 로컬 분석 정책 설정.",
-                "flow-5": "Day 5: 고위험 작업 2단계 확인 활성화.",
-                "flow-6": "Day 6: 첫 회의 워룸 템플릿 생성.",
-                "flow-7": "Day 7: 결과 리뷰 및 브리핑 템플릿 최적화.",
-                "guide-title": "연동 가이드",
-                "guide-desc": "3단계로 메시징 에이전트를 연결하세요.",
-                "line-1": "LINE Developers 콘솔 접속.",
-                "line-2": "Messaging API 채널 생성.",
-                "line-3": "Channel Access Token 복사.",
-                "line-4": "PaiRobot 설정에 붙여넣기.",
-                "wecom-1": "WeCom 관리자 콘솔 로그인.",
-                "wecom-2": "새 애플리케이션 생성.",
-                "wecom-3": "CorpID, AgentId, Secret 복사.",
-                "wecom-4": "PaiRobot 설정에 모두 붙여넣기.",
-                "tg-1": "@BotFather 검색.",
-                "tg-2": "/newbot 명령 전송.",
-                "tg-3": "HTTP API Token 복사.",
-                "tg-4": "PaiRobot 설정에 붙여넣기.",
-                "footer-privacy": "개인정보 처리방침",
-                "footer-terms": "이용약관",
-                "footer-support": "고객지원"
+            'ja': {
+                navFeatures: '機能一覧',
+                navSecurity: 'ローカル保護',
+                navPrivacy: 'プライバシーポリシー',
+                navCta: '今すぐ体験',
+                heroPill: 'v3.0 大型アップデート：会議戦情＋動的日程調整＋節税金庫',
+                heroTitlePrefix: '単なる文章生成ではありません。',
+                heroTitleMain: '経営者のための個人AI秘書。',
+                heroSubtitle: '会議音声を3秒でアクション項目に整理。予定衝突を自動回避。レシートOCRで税額控除を自動計算。Apple Silicon上のMacローカルAIで機密情報漏洩ゼロ。',
+                btnApple: 'App Storeからダウンロード',
+                btnPrivacy: 'プライバシーへの取り組み',
+                metric1: '3秒で音声をタスク分解',
+                metric2: 'MacローカルAI機密保持',
+                metric3: '純正リマインダー・カレンダー同期',
+                metric4: 'レシート5%税額控除計算',
+                featTag: '経営幹部向け統合設計',
+                featHeading: '4大コア機能',
+                featSubheading: '煩雑な管理業務や経費処理を徹底的に自動化し、リーダーシップが戦略的決定に専念できる環境を提供します。',
+                card1Pill: '機能 01 · 会議インテリジェンス',
+                card1Title: '会議戦情3点セット',
+                card1Desc: 'リアルタイム録音や音声ファイルを3秒で文字起こし。担当者と期限を自動抽出し、エグゼクティブフォローアップメールの下書きを即座に作成。Appleリマインダー・カレンダーへワンタップ登録。',
+                card1B1: '担当者と期日の自動分類',
+                card1B2: 'CEO向けフォローアップメール下書き',
+                card1B3: 'EventKit純正連携（手動コピー不要）',
+                card2Pill: '機能 02 · 自動日程調整',
+                card2Title: 'SynapseOS 動的タイムライン',
+                card2Desc: '確定済みの会議は変更できません。SynapseOSはカレンダーの重複を自動検知し、空き時間にタスクをスマートに配置。エネルギー負荷メーターと25分ポモドーロで過密日程を防ぎます。',
+                card2B1: '会議予定の自動衝突回避エンジン',
+                card2B2: 'リアルタイムエネルギー負荷モニター',
+                card2B3: '25分間の没頭ポモドーロ集中タイマー',
+                card3Pill: '機能 03 · 経費ビジョン金庫',
+                card3Title: 'SoloFinance レシートOCR',
+                card3Desc: '出張や会食のレシートを撮影するだけ。Apple Visionが店名・日付・金額を1秒で端末内認識。経費控除額を自動計算し、確定申告向けのPDFおよびCSVレポートを出力します。',
+                card3B1: 'Apple Visionによる1秒端末内認識',
+                card3B2: '税額控除の自動計算と年間積算',
+                card3B3: '税理士・経理提出用PDF/CSV出力',
+                card4Pill: '機能 04 · データ主権保護',
+                card4Title: 'MacホストローカルAI',
+                card4Desc: 'iPhoneで録音やレシートを取り込み、デスクのMacが負荷の高いローカルAI処理を代行。Apple Silicon上のOllamaにより、機密契約や会議情報が外部クラウドに漏れることはありません。',
+                card4B1: '100%オフライン大模型でクラウド漏洩ゼロ',
+                card4B2: 'Apple Silicon Neural Engineによる高速処理',
+                card4B3: '256ビット暗号化金庫と生体認証保護',
+                secTag: 'プライバシー主権設計',
+                secTitle: '企業の最高機密を保護する設計思想',
+                secDesc: '一般的なAIアプリは音声や機密文書をパブリッククラウドに送信するため重大なリスクを伴います。PaiRobotは完全ローカルファースト設計で、すべてのデータを個人のAppleデバイス内に厳重に保持します。',
+                secPoint1Title: 'LANローカル直接通信',
+                secPoint1Desc: 'iPhoneとMacは外部サーバーを経由せずローカルネットワークで安全に連携。',
+                secPoint2Title: 'Apple App Sandbox厳格準拠',
+                secPoint2Desc: 'ガイドライン 2.4.5(i) に準拠し、App-Scoped Bookmarksで安全にファイル管理。',
+                secPoint3Title: 'BYOK (自前のAPIキー) 方式',
+                secPoint3Desc: 'クラウドAIを使用する場合でも、APIキーは端末内に暗号化保存され当社には送信されません。',
+                secPoint4Title: 'ユーザーデータの売却・学習利用ゼロ',
+                secPoint4Desc: '広告追跡SDKなし、データ売却なし、お客様のデータによるモデル学習は行いません。',
+                dlTitle: 'iOSとmacOSで同時リリース',
+                dlSubtitle: 'ユニバーサル購入に対応し、iPhone・iPad・Macでシームレスにご利用いただけます。30日間の全機能無料トライアルを今すぐお試しください。',
+                dlCta: '30日間無料体験を開始',
+                dlPrivacy: 'プライバシーポリシーを見る',
+                footerFeat: '機能一覧',
+                footerSec: 'セキュリティ',
+                footerPriv: 'プライバシーポリシー'
+            },
+            'ko': {
+                navFeatures: '주요 기능',
+                navSecurity: '로컬 보안',
+                navPrivacy: '개인정보 처리방침',
+                navCta: '시작하기',
+                heroPill: 'v3.0 주요 업데이트: 회의 인텔리전스 + 스마트 타임라인 + 세무 금고',
+                heroTitlePrefix: '단순한 텍스트 작성을 넘어.',
+                heroTitleMain: '당신만을 위한 전속 AI 비서.',
+                heroSubtitle: '회의 음성을 3초 만에 실행 과제로 정리. 캘린더 일정 충돌 자동 회피. 영수증 5% 부가세 OCR 공제 계산. Apple Silicon 기반 Mac 로컬 AI로 완벽한 프라이버시 보호.',
+                btnApple: 'App Store에서 다운로드',
+                btnPrivacy: '개인정보 보호 선언 보기',
+                metric1: '3초 만에 음성을 과제로 분해',
+                metric2: '100% Mac 로컬 AI 프라이버시',
+                metric3: 'Apple 미리 알림 및 캘린더 원탭 동기화',
+                metric4: '영수증 5% 세금 공제 자동 계산',
+                featTag: '최고경영자 전용 통합 설계',
+                featHeading: '4대 핵심 업무 역량',
+                featSubheading: '반복적인 행정 업무와 영수증 처리 부담을 제로화하여 리더가 최고 가치의 의사결정에만 집중할 수 있도록 지원합니다.',
+                card1Pill: '역량 01 · 회의 인텔리전스',
+                card1Title: '회의 전술 3종 세트',
+                card1Desc: '실시간 녹음 또는 음성 파일 가져오기를 통해 3초 만에 구조화된 회의록 생성. 담당자 및 마감일을 추출하고 CEO 스타일 팔로업 이메일 초안 작성 후 Apple 미리 알림 및 캘린더에 원탭 등록.',
+                card1B1: '담당자 및 마감일 스마트 자동 추출',
+                card1B2: '즉시 발송 가능한 이사진 후속 이메일',
+                card1B3: 'EventKit 기본 연동 (수동 복사 불필요)',
+                card2Pill: '역량 02 · 스마트 일정 관리',
+                card2Title: 'SynapseOS 스마트 타임라인',
+                card2Desc: '고정 회의는 변경할 수 없습니다. SynapseOS는 캘린더 충돌을 자동 감지하여 빈 시간대에 업무를 최적으로 배치하며, 에너지 부하율 측정과 25분 뽀모도로 집중 모드를 제공합니다.',
+                card2B1: '캘린더 회의 충돌 방지 엔진',
+                card2B2: '실시간 업무 에너지 부하율 대시보드',
+                card2B3: '25분 몰입형 뽀모도로 집중 타이머',
+                card3Pill: '역량 03 · 세무 비전 금고',
+                card3Title: 'SoloFinance 영수증 OCR',
+                card3Desc: '출장 및 식대 영수증 촬영 시 Apple Vision이 1초 만에 상호, 날짜, 금액을 기기 내에서 인식. 5% 부가가치세 공제액을 자동 계산하고 세무 증빙용 PDF 및 CSV 보고서를 출력합니다.',
+                card3B1: 'Apple Vision 기기 내 1초 광학 인식',
+                card3B2: '5% 부가세 세금 공제 자동 계산 및 누적',
+                card3B3: '회계 증빙용 표준 PDF / CSV 내보내기',
+                card4Pill: '역량 04 · 로컬 데이터 주권',
+                card4Title: 'Mac 데스크 호스트 로컬 AI',
+                card4Desc: 'iPhone으로 외출 시 음성과 영수증을 캡처하고, 사무실의 Mac이 고부하 AI 분석을 전담합니다. Apple Silicon 상의 Ollama 연동으로 기업 기밀 계약서와 회의 내용이 클라우드로 유출되지 않습니다.',
+                card4B1: '100% 로컬 오프라인 대형 모델 유출 제로',
+                card4B2: 'Apple Silicon 신경망 엔진 기반 네이티브 가속',
+                card4B3: '256비트 하드웨어 보안 금고 및 생체 인증',
+                secTag: '프라이버시 주권 아키텍처',
+                secTitle: '기업 최고 기밀을 위한 보안 설계',
+                secDesc: '일반 AI 서비스는 음성과 문서를 퍼블릭 클라우드로 전송하여 심각한 유출 위험이 있습니다. PaiRobot은 로컬 우선 아키텍처를 채택하여 모든 중요 데이터가 개인 Apple 기기 안에만 안전하게 유지됩니다.',
+                secPoint1Title: '로컬 네트워크 P2P 직접 연동',
+                secPoint1Desc: 'iPhone과 Mac이 외부 서버 없이 로컬 Wi-Fi / LAN을 통해 암호화 연결됩니다.',
+                secPoint2Title: 'Apple 샌드박스 보안 규정 준수',
+                secPoint2Desc: '가이드라인 2.4.5(i)를 완벽 준수하며 App-Scoped Bookmarks로 안전하게 격리됩니다.',
+                secPoint3Title: 'BYOK (개인 API 키) 방식 지원',
+                secPoint3Desc: '클라우드 모델 사용 시에도 개인 API 키는 기기 내 보안 칩에만 암호화 저장됩니다.',
+                secPoint4Title: '사용자 데이터 판매 및 학습 배제',
+                secPoint4Desc: '추적 SDK 제로, 광고 데이터 전송 제로, 사용자 데이터를 AI 모델 훈련에 쓰지 않습니다.',
+                dlTitle: 'iOS 및 macOS 동시 출시',
+                dlSubtitle: '유니버설 구매(Universal Purchase)를 지원하여 iPhone, iPad, Mac 전 기기에서 한 번에 사용 가능합니다. 지금 30일 무료 체험을 시작하세요.',
+                dlCta: '30일 무료 체험 시작',
+                dlPrivacy: '개인정보 처리방침 전문 보기',
+                footerFeat: '주요 기능',
+                footerSec: '보안 안내',
+                footerPriv: '개인정보 처리방침'
             }
         };
 
-        const formUrls = {
-            tw: "https://docs.google.com/forms/d/e/1FAIpQLSewcr5_RUf2rSGgw1ugsahaXs3gwJnwMKE2oljLRg3AcNROKQ/viewform",
-            en: "https://docs.google.com/forms/d/e/1FAIpQLSeaiiU50PLWTUF4ERp1noDXMYUF0w6Ujuz_0kxs7d0aYRKxwQ/viewform",
-            jp: "https://docs.google.com/forms/d/e/1FAIpQLSe_wXtxBSTk22PRbh-BCl1hs0yK3SbXDP_t-bKUs8LgYXGnQQ/viewform",
-            kr: "https://docs.google.com/forms/d/e/1FAIpQLSeaiiU50PLWTUF4ERp1noDXMYUF0w6Ujuz_0kxs7d0aYRKxwQ/viewform"
-        };
+        function switchLanguage(lang) {
+            const data = translations[lang] || translations['en'];
+            
+            // Navigation
+            document.getElementById('nav-features').textContent = data.navFeatures;
+            document.getElementById('nav-security').textContent = data.navSecurity;
+            document.getElementById('nav-privacy').textContent = data.navPrivacy;
+            document.getElementById('nav-cta').textContent = data.navCta;
 
-        function changeLanguage(lang) {
-            localStorage.setItem('pairobot_pref_lang', lang);
+            // Hero
+            document.getElementById('hero-pill').textContent = data.heroPill;
+            document.getElementById('hero-title-prefix').textContent = data.heroTitlePrefix;
+            document.getElementById('hero-title-main').textContent = data.heroTitleMain;
+            document.getElementById('hero-subtitle').textContent = data.heroSubtitle;
+            document.getElementById('btn-apple').textContent = data.btnApple;
+            document.getElementById('btn-privacy').textContent = data.btnPrivacy;
 
-            for (let id in translations[lang]) {
-                const element = document.getElementById(id);
-                if (element) element.innerHTML = translations[lang][id];
-            }
+            // Metrics
+            document.getElementById('metric-1').textContent = data.metric1;
+            document.getElementById('metric-2').textContent = data.metric2;
+            document.getElementById('metric-3').textContent = data.metric3;
+            document.getElementById('metric-4').textContent = data.metric4;
 
-            const supportLink = document.getElementById('footer-support');
-            const targetUrl = formUrls[lang] || formUrls['en'];
+            // Features Section
+            document.getElementById('feat-tag').textContent = data.featTag;
+            document.getElementById('feat-heading').textContent = data.featHeading;
+            document.getElementById('feat-subheading').textContent = data.featSubheading;
 
-            let googleLangCode = 'en';
-            if (lang === 'tw') googleLangCode = 'zh-TW';
-            if (lang === 'jp') googleLangCode = 'ja';
-            if (lang === 'kr') googleLangCode = 'ko';
+            // Card 1
+            document.getElementById('card-1-pill').textContent = data.card1Pill;
+            document.getElementById('card-1-title').textContent = data.card1Title;
+            document.getElementById('card-1-desc').textContent = data.card1Desc;
+            document.getElementById('card-1-b1').textContent = data.card1B1;
+            document.getElementById('card-1-b2').textContent = data.card1B2;
+            document.getElementById('card-1-b3').textContent = data.card1B3;
 
-            supportLink.href = targetUrl + "?hl=" + googleLangCode;
+            // Card 2
+            document.getElementById('card-2-pill').textContent = data.card2Pill;
+            document.getElementById('card-2-title').textContent = data.card2Title;
+            document.getElementById('card-2-desc').textContent = data.card2Desc;
+            document.getElementById('card-2-b1').textContent = data.card2B1;
+            document.getElementById('card-2-b2').textContent = data.card2B2;
+            document.getElementById('card-2-b3').textContent = data.card2B3;
+
+            // Card 3
+            document.getElementById('card-3-pill').textContent = data.card3Pill;
+            document.getElementById('card-3-title').textContent = data.card3Title;
+            document.getElementById('card-3-desc').textContent = data.card3Desc;
+            document.getElementById('card-3-b1').textContent = data.card3B1;
+            document.getElementById('card-3-b2').textContent = data.card3B2;
+            document.getElementById('card-3-b3').textContent = data.card3B3;
+
+            // Card 4
+            document.getElementById('card-4-pill').textContent = data.card4Pill;
+            document.getElementById('card-4-title').textContent = data.card4Title;
+            document.getElementById('card-4-desc').textContent = data.card4Desc;
+            document.getElementById('card-4-b1').textContent = data.card4B1;
+            document.getElementById('card-4-b2').textContent = data.card4B2;
+            document.getElementById('card-4-b3').textContent = data.card4B3;
+
+            // Security Section
+            document.getElementById('sec-tag').textContent = data.secTag;
+            document.getElementById('sec-title').textContent = data.secTitle;
+            document.getElementById('sec-desc').textContent = data.secDesc;
+            document.getElementById('sec-point-1-title').textContent = data.secPoint1Title;
+            document.getElementById('sec-point-1-desc').textContent = data.secPoint1Desc;
+            document.getElementById('sec-point-2-title').textContent = data.secPoint2Title;
+            document.getElementById('sec-point-2-desc').textContent = data.secPoint2Desc;
+            document.getElementById('sec-point-3-title').textContent = data.secPoint3Title;
+            document.getElementById('sec-point-3-desc').textContent = data.secPoint3Desc;
+            document.getElementById('sec-point-4-title').textContent = data.secPoint4Title;
+            document.getElementById('sec-point-4-desc').textContent = data.secPoint4Desc;
+
+            // Download Section
+            document.getElementById('dl-title').textContent = data.dlTitle;
+            document.getElementById('dl-subtitle').textContent = data.dlSubtitle;
+            document.getElementById('dl-cta').textContent = data.dlCta;
+            document.getElementById('dl-privacy').textContent = data.dlPrivacy;
+
+            // Footer
+            document.getElementById('footer-feat').textContent = data.footerFeat;
+            document.getElementById('footer-sec').textContent = data.footerSec;
+            document.getElementById('footer-priv').textContent = data.footerPriv;
         }
 
-        window.onload = () => {
-            const savedLang = localStorage.getItem('pairobot_pref_lang');
-            let targetLang = 'en';
+        // Initialize with default or browser language
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language || navigator.userLanguage;
+            let target = 'zh-TW';
+            if (userLang.startsWith('en')) target = 'en';
+            else if (userLang === 'zh-CN' || userLang === 'zh-SG') target = 'zh-CN';
+            else if (userLang.startsWith('ja')) target = 'ja';
+            else if (userLang.startsWith('ko')) target = 'ko';
 
-            if (savedLang && translations[savedLang]) {
-                targetLang = savedLang;
-            } else {
-                const userLang = navigator.language || navigator.userLanguage;
-                if (userLang.includes('zh')) targetLang = 'tw';
-                else if (userLang.includes('ja')) targetLang = 'jp';
-                else if (userLang.includes('ko')) targetLang = 'kr';
-            }
-
-            document.getElementById('lang-selector').value = targetLang;
-            changeLanguage(targetLang);
-        };
+            const selector = document.getElementById('lang-select');
+            if (selector) selector.value = target;
+            switchLanguage(target);
+        });
     </script>
 </body>
 </html>

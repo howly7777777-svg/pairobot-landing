@@ -1,298 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy - PaiRobot</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.65;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      color: #1f2937;
-      background: #ffffff;
-    }
-    h1, h2 { color: #111827; }
-    h1 { margin-bottom: 8px; }
-    h2 { margin-top: 24px; margin-bottom: 8px; }
-    p { margin: 10px 0; }
-    ul { margin: 8px 0 12px 22px; }
-    li { margin: 6px 0; }
-    .lang-section {
-      margin-bottom: 56px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    .lang-section:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    .muted { color: #6b7280; }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .badge {
-      display: inline-block;
-      font-size: 12px;
-      padding: 2px 8px;
-      border: 1px solid #d1d5db;
-      border-radius: 999px;
-      color: #374151;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - PaiRobot</title>
+    <meta name="description" content="PaiRobot Privacy Policy: Local-first architecture, zero cloud leaks, on-device Apple Vision OCR, EventKit calendar sync, and Mac Host offline AI privacy commitment.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+            background-color: #070B14;
+            color: #E5E7EB;
+            line-height: 1.7;
+        }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .prose h2 {
+            color: #F9FAFB;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+        .prose h3 {
+            color: #93C5FD;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .prose p {
+            margin-bottom: 1rem;
+            color: #D1D5DB;
+        }
+        .prose ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: #9CA3AF;
+        }
+        .prose li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col antialiased">
 
-  <!-- ENGLISH -->
-  <section class="lang-section">
-    <h1>Privacy Policy <span class="badge">English</span></h1>
-    <p><strong>Last Updated: May 2026</strong></p>
-    <p>
-      PaiRobot respects your privacy. This Privacy Policy explains what data may be processed,
-      how data is used, when data may be shared with third-party processors, and what controls
-      you have.
-    </p>
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-gray-800/80 px-6 py-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="./index.html" class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-400 flex items-center justify-center font-bold text-white shadow-md text-lg">
+                    P
+                </div>
+                <div>
+                    <span class="text-lg font-bold tracking-tight text-white">PaiRobot</span>
+                    <span class="text-xs text-gray-400 ml-2">Privacy Commitment</span>
+                </div>
+            </a>
+            <div class="flex items-center space-x-3 text-xs md:text-sm">
+                <a href="#lang-en" class="px-2.5 py-1 rounded bg-gray-800 text-gray-300 hover:text-white transition">English</a>
+                <a href="#lang-zh" class="px-2.5 py-1 rounded bg-gray-800 text-gray-300 hover:text-white transition">繁體中文</a>
+                <a href="./index.html" class="text-blue-400 hover:underline">Back to Home</a>
+            </div>
+        </div>
+    </header>
 
-    <h2>1. Bring Your Own Key (BYOK) Architecture</h2>
-    <p>
-      PaiRobot uses a BYOK model. API keys you enter (for example Google Gemini, LINE, Telegram, WeCom,
-      Brave Search) are encrypted and stored locally on your device. We do not upload your API keys
-      to PaiRobot servers.
-    </p>
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-4xl mx-auto px-6 py-12">
+        <div class="glass-panel rounded-3xl p-8 md:p-12 prose max-w-none">
 
-    <h2>2. Data We May Process</h2>
-    <ul>
-      <li>User-entered prompts/instructions</li>
-      <li>Optional files you attach</li>
-      <li>Optional connected-service context explicitly requested by you (for example selected email/calendar content)</li>
-      <li>Technical metadata needed for reliability and troubleshooting (timestamps, error diagnostics, request status)</li>
-      <li>Purchase and entitlement status for in-app purchases</li>
-    </ul>
+            <!-- LANGUAGE SWITCHER TOP JUMP -->
+            <div class="mb-10 p-4 rounded-2xl bg-blue-900/20 border border-blue-500/30 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div>
+                    <span class="text-xs uppercase tracking-wider font-bold text-blue-400 block">Multilingual Privacy Statement</span>
+                    <span class="text-sm text-gray-300">Available in English and Traditional Chinese (繁體中文).</span>
+                </div>
+                <div class="flex gap-2">
+                    <a href="#lang-en" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white hover:bg-blue-500 transition">Jump to English</a>
+                    <a href="#lang-zh" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white hover:bg-emerald-500 transition">切換至繁體中文</a>
+                </div>
+            </div>
 
-    <h2>3. How Data Is Collected</h2>
-    <ul>
-      <li>Directly from your input in the app</li>
-      <li>From connected services only after your explicit action</li>
-      <li>Automatically from app/device events necessary for security and diagnostics</li>
-    </ul>
+            <!-- ========================================== -->
+            <!-- SECTION 1: ENGLISH PRIVACY POLICY          -->
+            <!-- ========================================== -->
+            <section id="lang-en" class="mb-20">
+                <div class="flex items-center justify-between border-b border-gray-700 pb-3 mb-6">
+                    <h1 class="text-2xl md:text-3xl font-bold text-white">Privacy Policy</h1>
+                    <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30">English</span>
+                </div>
+                <p class="text-xs text-gray-400"><strong>Effective Date:</strong> October 2026 | <strong>App Version:</strong> 3.0.0 (Build 28)</p>
+                <p>
+                    PaiRobot ("we", "us", or "our"), developed by Vajrapadma Development, is engineered from the ground up on a <strong>Local-First, Privacy-Sovereign Architecture</strong>. We believe your executive meetings, schedules, business receipts, and confidential communications should remain strictly in your control.
+                </p>
+                <p>
+                    This Privacy Policy details how PaiRobot handles data across iOS (iPhone & iPad) and macOS, explicitly adhering to the <strong>Apple App Store Review Guidelines (Guideline 5.1)</strong>, GDPR, and CCPA standards.
+                </p>
 
-    <h2>4. How Data Is Used</h2>
-    <ul>
-      <li>To provide requested AI and automation features</li>
-      <li>To process and restore in-app purchases</li>
-      <li>To maintain security, prevent abuse, and debug failures</li>
-      <li>To improve reliability and service quality</li>
-    </ul>
+                <h2>1. Local-First Architecture & Sovereign Data Storage</h2>
+                <p>
+                    PaiRobot operates primarily on-device. All core intelligence functions—including audio recordings, extracted meeting minutes, action items, task schedules, and receipt records—are stored strictly within your personal device's local App Sandbox and Secure Enclave.
+                </p>
+                <ul>
+                    <li><strong>No Proprietary Storage Cloud:</strong> We do not operate remote multitenant databases that store, harvest, or aggregate your personal transcripts, schedule data, or tax records.</li>
+                    <li><strong>Hardware-Level Encryption:</strong> Sensitive credentials, personal signatures, and private notes are safeguarded using Apple's 256-bit AES Secure Enclave hardware encryption.</li>
+                </ul>
 
-    <h2>5. Third-Party AI/Service Processors</h2>
-    <p>
-      Depending on enabled features and your actions, data may be processed by:
-    </p>
-    <ul>
-      <li>Google Gemini API (generation, summarization, analysis)</li>
-      <li>Brave Search API (web search when enabled by you)</li>
-      <li>Other communication providers you configure (e.g., LINE, Telegram, WeCom) for the specific workflows you trigger</li>
-    </ul>
-    <p>
-      We do not sell personal data.
-    </p>
+                <h2>2. Device Hardware & System Permissions</h2>
+                <p>PaiRobot requests specific system permissions solely to execute features you directly trigger:</p>
+                <ul>
+                    <li><strong>Microphone (NSMicrophoneUsageDescription):</strong> Used strictly when you tap the record button to transcribe meetings or capture executive voice memos. Audio streams are processed locally or directed to your paired Mac Host; audio is never passively recorded or streamed without your explicit action.</li>
+                    <li><strong>Camera & Photo Library (NSCameraUsageDescription):</strong> Used strictly in the SoloFinance Vision OCR module to scan receipts, bills, and tax invoices. All text extraction is executed on-device using Apple's native Vision framework.</li>
+                    <li><strong>Calendars & Reminders (EventKit):</strong> Used strictly to inspect fixed calendar meetings for conflict avoidance on the SynapseOS timeline and to sync extracted action items to Apple Reminders with one tap. Data is read and written locally; no calendar entries are uploaded to external servers.</li>
+                    <li><strong>Local Network & Bonjour (NSLocalNetworkUsageDescription):</strong> Used on macOS and iOS to discover and securely pair your iPhone with your Mac Desk Host over your private local Wi-Fi or LAN.</li>
+                </ul>
 
-    <h2>6. In-App Consent Before AI Data Sharing</h2>
-    <p>
-      Before personal data is sent to third-party AI processors, PaiRobot displays an in-app disclosure
-      describing what data may be sent, to whom, and for what purpose, and requests your consent.
-    </p>
+                <h2>3. Mac Host Pairing & Local Offline AI (Ollama)</h2>
+                <p>
+                    When you pair your iPhone with your Mac Desk Host, the communication occurs peer-to-peer over your local encrypted network:
+                </p>
+                <ul>
+                    <li>Heavy AI summarization and contract review tasks are executed locally on your Mac's Apple Silicon neural engine running local Ollama (Llama 3, Mistral, or compatible models).</li>
+                    <li><strong>Zero Cloud Leaks:</strong> Under Local AI mode, 100% of the prompts, transcriptions, and analyses remain inside your private local network. Zero bytes leave your physical hardware.</li>
+                </ul>
 
-    <h2>7. User Control</h2>
-    <p>
-      You can manage or withdraw AI processing consent in app settings. If consent is withdrawn,
-      AI-related transmission to third-party processors is disabled until consent is granted again.
-    </p>
+                <h2>4. Bring Your Own Key (BYOK) & Optional Cloud LLMs</h2>
+                <p>
+                    If you choose to enable cloud AI providers (such as Google Gemini or OpenAI):
+                </p>
+                <ul>
+                    <li>You provide your own API credentials (BYOK). Your API keys are encrypted locally inside your device keychain and are never transmitted to our servers.</li>
+                    <li>API requests are transmitted directly from your device to the respective provider's official endpoint via TLS 1.3 encrypted HTTPS.</li>
+                    <li>We explicitly mandate that your data is never used for foundation model training by third-party processors.</li>
+                </ul>
 
-    <h2>8. Data Retention and Storage</h2>
-    <p>
-      PaiRobot is designed to minimize server-side storage. Most sensitive content is processed
-      locally and/or directly between your device and the third-party services you configure.
-      Local app data remains on your device unless you explicitly export or transmit it.
-    </p>
+                <h2>5. Zero Sale of Personal Data & Zero Advertising SDKs</h2>
+                <p>
+                    <strong>We do not sell, rent, monetize, or broker your personal information.</strong> PaiRobot contains zero third-party advertising SDKs, zero user-tracking analytics libraries, and zero behavioral telemetry profilers.
+                </p>
 
-    <h2>9. Third-Party Protection Standard</h2>
-    <p>
-      PaiRobot requires third-party processors to provide data protection measures equal to or stronger
-      than our own standard, consistent with applicable law and platform requirements.
-    </p>
+                <h2>6. In-App Purchases & Subscriptions</h2>
+                <p>
+                    All subscriptions and purchases are processed exclusively through Apple's In-App Purchase system (StoreKit 2). We do not collect, process, or store your credit card numbers, billing addresses, or bank details.
+                </p>
 
-    <h2>10. Contact</h2>
-    <p>
-      If you have privacy questions, contact us at:<br />
-      <strong><a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a></strong>
-    </p>
-  </section>
+                <h2>7. Data Retention & User Controls</h2>
+                <p>
+                    Because your data is stored locally, you maintain total ownership and control:
+                </p>
+                <ul>
+                    <li><strong>Export:</strong> You can export meeting minutes as Markdown/Text and tax receipt logs as standard CPA-ready PDF/CSV files at any time.</li>
+                    <li><strong>Deletion:</strong> Deleting an item in PaiRobot removes it immediately from local storage. Deleting the app clears all sandbox data from your device.</li>
+                </ul>
 
-  <!-- TRADITIONAL CHINESE -->
-  <section class="lang-section">
-    <h1>隱私權政策 <span class="badge">繁體中文</span></h1>
-    <p><strong>最後更新：2026年5月</strong></p>
-    <p>
-      PaiRobot 重視您的隱私。本政策說明我們可能處理哪些資料、如何使用資料、何時可能與第三方服務處理者共享資料，以及您可行使的控制權。
-    </p>
+                <h2>8. Contact & Legal Inquiries</h2>
+                <p>
+                    If you have questions regarding this Privacy Policy or your data protection rights, please contact our privacy representative directly at:
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:howly7777777@gmail.com" class="text-blue-400 hover:underline">howly7777777@gmail.com</a><br>
+                    <strong>Developer:</strong> Vajrapadma Development Team<br>
+                    <strong>Website:</strong> <a href="https://howly7777777-svg.github.io/pairobot-landing/" class="text-blue-400 hover:underline">https://howly7777777-svg.github.io/pairobot-landing/</a>
+                </p>
+            </section>
 
-    <h2>1. 自帶金鑰（BYOK）架構</h2>
-    <p>
-      PaiRobot 採用 BYOK 模式。您輸入的 API 金鑰（例如 Google Gemini、LINE、Telegram、WeCom、Brave Search）
-      會加密並僅儲存在您的裝置本機。我們不會把您的 API 金鑰上傳到 PaiRobot 伺服器。
-    </p>
+            <hr class="border-gray-800 my-16">
 
-    <h2>2. 我們可能處理的資料</h2>
-    <ul>
-      <li>您在 App 輸入的提示詞／指令</li>
-      <li>您選擇附加的檔案（選用）</li>
-      <li>您明確要求處理的連動服務內容（例如特定郵件／行事曆內容，選用）</li>
-      <li>為穩定性與除錯所需之技術性中繼資料（時間戳、錯誤診斷、請求狀態）</li>
-      <li>應用內購買的交易與權益狀態</li>
-    </ul>
+            <!-- ========================================== -->
+            <!-- SECTION 2: 繁體中文隱私權政策 (TRADITIONAL CHINESE)-->
+            <!-- ========================================== -->
+            <section id="lang-zh" class="mb-10">
+                <div class="flex items-center justify-between border-b border-gray-700 pb-3 mb-6">
+                    <h1 class="text-2xl md:text-3xl font-bold text-white">隱私權政策</h1>
+                    <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">繁體中文</span>
+                </div>
+                <p class="text-xs text-gray-400"><strong>生效日期：</strong>2026年10月 | <strong>適用版本：</strong>v3.0.0 (Build 28)</p>
+                <p>
+                    PaiRobot（以下簡稱「本軟體」或「我們」）由 Vajrapadma 開發團隊打造。我們深知高階主管與專業工作者的會議記錄、行動日程、發票財務與商務機密具有高度敏感性，因此從架構底層即全面落實<strong>「本機優先、數據自主 (Local-First & Data Sovereign)」</strong>之最高隱私標準。
+                </p>
+                <p>
+                    本隱私權政策詳細說明 PaiRobot 在 iOS (iPhone / iPad) 與 macOS 平台如何收集、使用與保護您的資料，並嚴格遵循 <strong>Apple App Store 審核指南（Guideline 5.1）</strong>、歐盟一般資料保護規則 (GDPR) 與台灣個人資料保護法規。
+                </p>
 
-    <h2>3. 資料蒐集方式</h2>
-    <ul>
-      <li>由您在 App 內直接輸入</li>
-      <li>僅在您主動觸發相關功能時，自已連動之服務取得必要資料</li>
-      <li>為安全與診斷目的，自動蒐集最低限度的裝置／應用事件資訊</li>
-    </ul>
+                <h2>1. 本機優先架構與數據完全自主</h2>
+                <p>
+                    PaiRobot 採取「端側本機優先」架構設計。您所有的核心資料（包括會議錄音、逐字稿、行動待辦、時間軸排程、發票影像與營業稅扣抵紀錄），均直接存放在您個人的 Apple 設備沙盒（App Sandbox）與硬體安全隔離區（Secure Enclave）中。
+                </p>
+                <ul>
+                    <li><strong>無中心化雲端資料庫：</strong>我們絕不在雲端伺服器儲存、備份、剖析或收集您的個人會議紀錄與報稅明細。</li>
+                    <li><strong>256 位元硬體級加密：</strong>重要商業備忘與機密憑據均受本機 Apple Secure Enclave 硬體晶片防護，需經 Face ID / Touch ID 或設備密碼授權解鎖。</li>
+                </ul>
 
-    <h2>4. 資料使用目的</h2>
-    <ul>
-      <li>提供您要求的 AI 與自動化功能</li>
-      <li>處理與還原應用內購買權益</li>
-      <li>維護安全、避免濫用與排除故障</li>
-      <li>提升服務可靠度與品質</li>
-    </ul>
+                <h2>2. 設備權限使用說明</h2>
+                <p>本軟體僅在您主動觸發相關功能時，向系統申請必要的權限：</p>
+                <ul>
+                    <li><strong>麥克風權限 (NSMicrophoneUsageDescription)：</strong>僅在您點擊「會議錄音」或「語音輸入」時啟用，用於實時音訊捕捉與文字轉錄。音訊由本機或您配對的 Mac 主機處理，絕不進行背景無預警錄音。</li>
+                    <li><strong>相機與相簿權限 (NSCameraUsageDescription)：</strong>僅在 SoloFinance 拍立得發票功能拍照或選取收據時使用。影像直接透過 Apple 原生端側 Vision 框架辨識文字，照片絕不上傳至任何外部第三方程式庫。</li>
+                    <li><strong>行事曆與提醒事項權限 (EventKit)：</strong>僅用於 SynapseOS 動態排程讀取今日固定會議以智慧避開衝突，以及將會議決議行動項一鍵寫入系統「提醒事項」與「行事曆」。所有讀寫均在端側原生完成，絕不上傳雲端。</li>
+                    <li><strong>本機區域網路與 Bonjour (NSLocalNetworkUsageDescription)：</strong>用於外出 iPhone 與桌面 Mac 幕僚主機進行點對點安全搜尋與加密配對。</li>
+                </ul>
 
-    <h2>5. 第三方 AI／服務處理者</h2>
-    <p>依您啟用的功能與操作，資料可能由下列處理者處理：</p>
-    <ul>
-      <li>Google Gemini API（生成、摘要、分析）</li>
-      <li>Brave Search API（僅於您啟用／要求時進行網路搜尋）</li>
-      <li>您自行設定之通訊服務供應商（如 LINE、Telegram、WeCom），僅限您觸發之工作流程</li>
-    </ul>
-    <p>我們不販售您的個人資料。</p>
+                <h2>3. Mac 幕僚主機配對與本地離線大模型 (Ollama)</h2>
+                <p>
+                    當您將 iPhone 與桌上型 Mac 配對時，兩端均在您的個人內部加密 Wi-Fi / LAN 環境下通訊：
+                </p>
+                <ul>
+                    <li>高運算量的商業合約審閱與深度會議拆解，直接在 Mac 的 Apple Silicon 神經引擎上運行本地 Ollama（如 Llama 3 / Mistral 等開源模型）。</li>
+                    <li><strong>機密零外洩保證：</strong>在本地離線大模型模式下，百分之百的對話、逐字稿與分析結論皆保留在您的實體硬體內，零位元組上傳至公有雲。</li>
+                </ul>
 
-    <h2>6. AI 資料傳輸前的 App 內同意</h2>
-    <p>
-      在個人資料傳送至第三方 AI 處理者前，PaiRobot 會先於 App 內顯示揭露內容，
-      說明可能傳送的資料、接收方與用途，並向您取得同意。
-    </p>
+                <h2>4. 自帶金鑰 (BYOK) 架構與選用雲端大模型</h2>
+                <p>
+                    若您自主選擇使用第三方商業大模型（例如 Google Gemini 或 OpenAI）：
+                </p>
+                <ul>
+                    <li>您使用個人的 API 金鑰（Bring Your Own Key），金鑰僅加密保存在設備本機，絕不上傳至本軟體開發者伺服器。</li>
+                    <li>API 請求均由您的設備端直接透過 TLS 1.3 加密連線傳送至官方端點。</li>
+                    <li>我們明令禁止第三方處理器將您的機密資料用於其基礎模型之訓練。</li>
+                </ul>
 
-    <h2>7. 使用者控制</h2>
-    <p>
-      您可於 App 設定中管理或撤回 AI 處理同意。撤回後，與 AI 相關的第三方資料傳輸將停用，直到您再次同意。
-    </p>
+                <h2>5. 絕不轉售個人資料與零廣告追蹤</h2>
+                <p>
+                    <strong>我們絕不向任何數據經紀商、廣告商或第三方機構轉售、出租、交換或共享您的任何個人資料。</strong>本軟體不包含任何第三方廣告追蹤 SDK、行為分析監控或跨 App 追蹤機制。
+                </p>
 
-    <h2>8. 資料保存與儲存</h2>
-    <p>
-      PaiRobot 以最小化伺服器儲存為原則。多數敏感內容僅在本機與您自行設定的第三方服務間處理。
-      除非您主動匯出或傳送，資料通常保留在您的裝置中。
-    </p>
+                <h2>6. 應用程式內購買與訂閱處理</h2>
+                <p>
+                    PaiRobot 的所有 Pro 方案訂閱與付費均完全透過 Apple 原生 In-App Purchase (StoreKit 2) 交易。開發團隊無法存取、亦不經手您的信用卡號、帳單地址或銀行帳號。
+                </p>
 
-    <h2>9. 第三方保護標準</h2>
-    <p>
-      PaiRobot 要求第三方處理者提供不低於本服務標準的隱私與安全保護，並符合適用法規與平台要求。
-    </p>
+                <h2>7. 數據保留、匯出與刪除權利</h2>
+                <p>
+                    由於資料儲存於您個人的本機設備中，您擁有完整的處置權限：
+                </p>
+                <ul>
+                    <li><strong>隨時匯出：</strong>您可以一鍵將會議逐字稿匯出為 Markdown/TXT，將發票明細匯出為符合會計標準的 PDF / CSV 報表。</li>
+                    <li><strong>徹底刪除：</strong>在 App 內刪除任何會議或發票紀錄，本機即同步清除；若移除本應用程式，設備沙盒內的所有資料將被立即銷毀。</li>
+                </ul>
 
-    <h2>10. 聯絡我們</h2>
-    <p>
-      若您有任何隱私問題，請來信：<br />
-      <strong><a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a></strong>
-    </p>
-  </section>
+                <h2>8. 聯絡我們與法規諮詢</h2>
+                <p>
+                    若您對本隱私權政策或個人資料保護有任何疑問，歡迎隨時與開發團隊聯繫：
+                </p>
+                <p>
+                    <strong>專屬客服信箱：</strong> <a href="mailto:howly7777777@gmail.com" class="text-blue-400 hover:underline">howly7777777@gmail.com</a><br>
+                    <strong>開發團隊：</strong> Vajrapadma Development Team<br>
+                    <strong>官方網站：</strong> <a href="https://howly7777777-svg.github.io/pairobot-landing/" class="text-blue-400 hover:underline">https://howly7777777-svg.github.io/pairobot-landing/</a>
+                </p>
+            </section>
+        </div>
+    </main>
 
-  <!-- JAPANESE -->
-  <section class="lang-section">
-    <h1>プライバシーポリシー <span class="badge">日本語</span></h1>
-    <p><strong>最終更新日：2026年5月</strong></p>
-    <p>
-      PaiRobot はお客様のプライバシーを尊重します。本ポリシーでは、処理される可能性のあるデータ、
-      利用目的、第三者への共有条件、およびユーザーが行使できるコントロールについて説明します。
-    </p>
-
-    <h2>1. BYOK（Bring Your Own Key）アーキテクチャ</h2>
-    <p>
-      PaiRobot は BYOK モデルを採用しています。入力された API キー（Google Gemini、LINE、Telegram、
-      WeCom、Brave Search など）は暗号化され、端末ローカルに保存されます。
-      PaiRobot サーバーへ API キーをアップロードすることはありません。
-    </p>
-
-    <h2>2. 処理される可能性のあるデータ</h2>
-    <ul>
-      <li>ユーザーが入力したプロンプト／指示</li>
-      <li>任意で添付したファイル</li>
-      <li>ユーザーが明示的に要求した連携サービスの文脈情報（例：選択したメール／カレンダー内容）</li>
-      <li>信頼性・障害対応のための技術メタデータ（時刻、エラー診断、リクエスト状態）</li>
-      <li>アプリ内課金の購入・権利状態</li>
-    </ul>
-
-    <h2>3. 収集方法</h2>
-    <ul>
-      <li>アプリ内でのユーザー入力</li>
-      <li>ユーザーの明示的操作に基づく連携サービスからの取得</li>
-      <li>セキュリティと診断に必要な最小限の自動収集</li>
-    </ul>
-
-    <h2>4. 利用目的</h2>
-    <ul>
-      <li>ユーザーが要求した AI／自動化機能の提供</li>
-      <li>アプリ内課金の処理および復元</li>
-      <li>セキュリティ維持、不正防止、障害解析</li>
-      <li>品質と信頼性の向上</li>
-    </ul>
-
-    <h2>5. 第三者 AI／サービス処理者</h2>
-    <p>機能設定およびユーザー操作に応じて、以下により処理される場合があります：</p>
-    <ul>
-      <li>Google Gemini API（生成、要約、分析）</li>
-      <li>Brave Search API（ユーザーが有効化・要求した場合のWeb検索）</li>
-      <li>ユーザー設定の通信サービス（LINE、Telegram、WeCom など。ユーザーが実行した処理に限る）</li>
-    </ul>
-    <p>当社は個人データを販売しません。</p>
-
-    <h2>6. AI データ共有前のアプリ内同意</h2>
-    <p>
-      個人データを第三者 AI 処理者へ送信する前に、PaiRobot はアプリ内で
-      「送信される可能性のあるデータ・送信先・目的」を表示し、ユーザー同意を取得します。
-    </p>
-
-    <h2>7. ユーザーのコントロール</h2>
-    <p>
-      AI 処理同意はアプリ設定で管理・撤回できます。撤回後は、再同意されるまで
-      AI 関連の第三者送信は無効化されます。
-    </p>
-
-    <h2>8. データ保持と保存</h2>
-    <p>
-      PaiRobot はサーバー側保存を最小化する設計です。多くの機密データは、
-      お客様端末および設定済み第三者サービス間で処理されます。
-      ユーザーが明示的にエクスポート／送信しない限り、データは通常端末内に保持されます。
-    </p>
-
-    <h2>9. 第三者保護基準</h2>
-    <p>
-      PaiRobot は、第三者処理者に対し、当社と同等以上のプライバシー・セキュリティ保護を求め、
-      適用法令およびプラットフォーム要件に準拠することを要求します。
-    </p>
-
-    <h2>10. お問い合わせ</h2>
-    <p>
-      プライバシーに関するお問い合わせ：<br />
-      <strong><a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a></strong>
-    </p>
-  </section>
-
-  <p class="muted">
-    If there is any inconsistency between language versions, the English version is used for App Review reference.
-  </p>
-
+    <!-- Footer -->
+    <footer class="glass-panel border-t border-gray-800/80 py-8 px-6 text-center text-xs text-gray-500">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>PaiRobot · Personal AI Executive Suite · Vajrapadma</div>
+            <div class="flex gap-4">
+                <a href="./index.html" class="hover:text-white transition">Home</a>
+                <a href="mailto:howly7777777@gmail.com" class="hover:text-white transition">Contact Support</a>
+            </div>
+            <div>&copy; 2026 Vajrapadma. All rights reserved.</div>
+        </div>
+    </footer>
 </body>
 </html>
